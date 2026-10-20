@@ -1,0 +1,71 @@
+@import url("../screen_files/local-visual-assets.css");
+html { scroll-behavior: smooth; }
+/* Constrain the exported mobile layout and let Slick own its horizontal track. */
+@media (max-width: 767px) {
+  html, body {
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+  .ui-pdp-container,
+  .ui-pdp-container__row,
+  .ui-pdp-gallery,
+  .ui-pdp-carousel-snapped,
+  .ui-pdp-gallery .andes-carousel-snapped__container,
+  .ui-pdp-gallery .andes-carousel-snapped__controls-wrapper {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .slick-carousel.andes-carousel-snapped {
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    max-width: 100%;
+  }
+  .slick-carousel.slick-initialized {
+    display: block !important;
+    overflow: hidden !important;
+  }
+  .slick-carousel .slick-list {
+    height: auto !important;
+    min-height: 0 !important;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .slick-carousel .slick-track {
+    display: flex !important;
+    align-items: stretch;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  .slick-carousel .slick-track::before,
+  .slick-carousel .slick-track::after {
+    display: none;
+  }
+  .slick-carousel .slick-slide {
+    float: none !important;
+    flex-shrink: 0;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+  }
+  .slick-carousel .ui-pdp-gallery--horizontal {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 1 / 1;
+    box-sizing: border-box;
+  }
+  .slick-carousel img.ui-pdp-gallery--horizontal {
+    object-fit: contain;
+    object-position: center;
+  }
+  .nav-search {
+    min-width: 0;
+    max-width: 100%;
+  }
+}

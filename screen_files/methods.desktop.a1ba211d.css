@@ -1,0 +1,1079 @@
+*,
+:after,
+:before {
+    box-sizing: border-box
+}
+
+body {
+    background: #ededed
+}
+
+main[role=main] {
+    font-family: Proxima Nova, -apple-system, Roboto, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.35;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, .1)
+}
+
+::selection {
+    background: rgba(0, 0, 0, .1)
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 0
+}
+
+p {
+    margin: 0
+}
+
+a,
+a:hover,
+a:link,
+a:visited {
+    text-decoration: none
+}
+
+a {
+    color: var(--andes-color-blue-500, #3483fa);
+    transition: color .2s ease-in-out
+}
+
+a:focus,
+a:hover {
+    color: var(--andes-color-blue-600, #2968c8)
+}
+
+a:hover {
+    cursor: pointer
+}
+
+a:active {
+    color: var(--andes-color-blue-700, #1f4e96)
+}
+
+ol,
+ul {
+    margin: 0;
+    padding: 0
+}
+
+li {
+    list-style: none
+}
+
+button,
+textarea {
+    font-family: inherit
+}
+
+.font-color--GREEN {
+    color: #00a650
+}
+
+.font-color--GRAY {
+    color: rgba(0, 0, 0, .55)
+}
+
+.font-color--LIGHT_GRAY {
+    color: rgba(0, 0, 0, .07)
+}
+
+.font-color--BLACK {
+    color: rgba(0, 0, 0, .9)
+}
+
+.font-color--RED {
+    color: #f23d4f
+}
+
+.font-color--ORANGE {
+    color: #f73
+}
+
+.font-color--BLUE {
+    color: var(--andes-color-blue-500, #3483fa)
+}
+
+.font-color--WHITE {
+    color: #fff
+}
+
+.font-size--XXXSMALL {
+    font-size: 10px
+}
+
+.font-size--XXSMALL {
+    font-size: 12px
+}
+
+.font-size--XSMALL {
+    font-size: 14px
+}
+
+.font-size--SMALL {
+    font-size: 16px
+}
+
+.font-size--MEDIUM {
+    font-size: 18px
+}
+
+.font-size--LARGE {
+    font-size: 20px
+}
+
+.font-size--XLARGE {
+    font-size: 24px
+}
+
+.font-size--XXLARGE {
+    font-size: 28px
+}
+
+.font-family--LIGHT {
+    font-weight: 300
+}
+
+.font-family--REGULAR {
+    font-weight: 400
+}
+
+.font-family--SEMIBOLD {
+    font-weight: 600
+}
+
+.font-family--BOLD {
+    font-weight: 700
+}
+
+.background-color--BLUE {
+    background-color: #3483fa
+}
+
+.background-color--GREEN {
+    background-color: #00a650
+}
+
+.background-color--WHITE {
+    background-color: #fff
+}
+
+.background-color--ANDES-SECONDARY-E-700 {
+    background-color: #3f3ab8
+}
+
+.background-color--TRANSPARENT {
+    background: var(--andes-color-blue-150, rgba(65, 137, 230, .15))
+}
+
+.text-alignment--center {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%
+}
+
+body,
+html {
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased
+}
+
+.payment-title h1 {
+    font-size: 32px;
+    font-weight: 600;
+    text-align: left
+}
+
+.payment-wrapper {
+    color: #333;
+    font-family: Proxima Nova, -apple-system, Helvetica Neue, helvetica, roboto, arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.3;
+    overflow: hidden
+}
+
+.payment-wrapper * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+.payment-wrapper a,
+.payment-wrapper a:visited {
+    color: #3483fa;
+    text-decoration: none
+}
+
+.payment-wrapper .credits {
+    background: url("../assets/mlstatic/secure/payment-logos/v2/payment-logos-mla-flag2x_v_3fecb741bb.png") no-repeat;
+    background-position: left -4755px;
+    height: 80px;
+    margin-bottom: -50px;
+    transform: scale(.5) translate(-50%, -50%);
+    width: 160px
+}
+
+.payment-wrapper .know-more {
+    margin-top: 15px
+}
+
+.payment-title h1 {
+    margin: 50px 0 60px
+}
+
+.payment-wrapper {
+    margin: 0 auto;
+    max-width: 1200px
+}
+
+.payment-wrapper a:hover {
+    color: #1259c3
+}
+
+.payment-wrapper article {
+    margin: 50px 0
+}
+
+.payment-modal {
+    margin: 145px 64px 64px
+}
+
+.payment-modal .payment-title {
+    background-color: #fff;
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, .07), 0 0 24px 0 rgba(0, 0, 0, .15);
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1
+}
+
+.payment-modal .payment-title h1 {
+    font-size: 24px;
+    margin: 25px 64px
+}
+
+.grid-container__row {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 1 0%;
+    flex-flow: row wrap
+}
+
+.grid-container__col {
+    box-sizing: border-box;
+    flex: 1 1 0%;
+    flex-wrap: wrap;
+    width: 100%
+}
+
+.grid-container__col--text-center {
+    align-content: center;
+    display: flex;
+    justify-content: center
+}
+
+.grid-container__col--text-evenly {
+    align-content: center;
+    display: flex;
+    justify-content: space-evenly
+}
+
+.grid-container .col-1 {
+    flex: 1 1 0%
+}
+
+.grid-container .col-2 {
+    flex: 2 1 0%
+}
+
+.grid-container .col-3 {
+    flex: 3 1 0%
+}
+
+.grid-container .col-4 {
+    flex: 4 1 0%
+}
+
+.grid-container .col-5 {
+    flex: 5 1 0%
+}
+
+.grid-container__separator {
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    height: 1px;
+    margin: 32px 0;
+    width: 100%
+}
+
+.grid-separator--LINE:not(:empty):after {
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    content: "";
+    display: block;
+    height: 1px;
+    margin: 32px 0;
+    width: 100%
+}
+
+.grid-separator--LINE.grid-separator--12 {
+    margin: 12px 0
+}
+
+.grid-separator--LINE.grid-separator--24 {
+    margin: 24px 0
+}
+
+.grid-separator--LINE.grid-separator--28 {
+    margin: 28px 0
+}
+
+.grid-separator--LINE.grid-separator--32 {
+    margin: 32px 0
+}
+
+.grid-separator--SPACE {
+    border: 0;
+    margin: 0
+}
+
+.grid-separator--SPACE.grid-separator--12 {
+    height: 12px
+}
+
+.grid-separator--SPACE.grid-separator--24 {
+    height: 24px
+}
+
+.grid-separator--SPACE.grid-separator--28 {
+    height: 28px
+}
+
+.grid-separator--SPACE.grid-separator--32 {
+    height: 32px
+}
+
+.payment-icon {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px
+}
+
+.payment-icon__disclaimer {
+    color: rgba(0, 0, 0, .55);
+    font-size: 8px;
+    text-align: center;
+    width: 48px
+}
+
+.payment-icon__size {
+    align-items: center;
+    display: flex;
+    flex: 1 1 auto;
+    height: 48px;
+    width: 95px
+}
+
+.payment-icon__margin {
+    margin-top: 6px
+}
+
+.payment-icon__icon {
+    max-width: 70px
+}
+
+.payment-icon__label {
+    line-height: 15px;
+    width: 90px
+}
+
+.payment-method__disclaimer,
+.payment-method__title-disclaimer {
+    margin-top: 8px
+}
+
+.payment-method__icons {
+    display: flex;
+    flex-wrap: wrap
+}
+
+.payment-method__action {
+    display: block;
+    margin-top: 16px;
+    width: -moz-fit-content;
+    width: fit-content
+}
+
+.payment-method__disclaimer .payment-list__list {
+    list-style: decimal;
+    margin-left: 11px
+}
+
+.payment-method__title-disclaimer .payment-list__list:first-child:before {
+    content: "*";
+    float: left
+}
+
+.andes-visually-hidden,
+.andes-visually-hidden-focusable:not(:focus):not(:focus-within) {
+    border: 0;
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: 0 -1px -1px 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px
+}
+
+.andes-progress-indicator-circular__container {
+    display: flex;
+    height: max-content;
+    position: relative;
+    width: max-content
+}
+
+.andes-progress-indicator-circular__progress {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative
+}
+
+.andes-progress-indicator-circular--blue .andes-progress-indicator-circular__progress {
+    stroke: var(--andes-color-blue-500, #3483fa)
+}
+
+.andes-progress-indicator-circular--white .andes-progress-indicator-circular__progress {
+    stroke: #fff
+}
+
+.andes-progress-indicator-circular__content {
+    color: rgba(0, 0, 0, .9);
+    font-size: 12px;
+    font-weight: 400
+}
+
+.andes-progress-indicator-circular__label {
+    color: rgba(0, 0, 0, .9);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased
+}
+
+.andes-progress-indicator-circular--indeterminate .andes-progress-indicator-circular__svg {
+    animation: andes-pi-circular-rotate 2s linear infinite;
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 1022
+}
+
+.andes-progress-indicator-circular--indeterminate .andes-progress-indicator-circular__circle {
+    stroke-linecap: round;
+    animation: andes-pi-circular-dash-reduce-motion 5s ease-in-out infinite
+}
+
+@media(prefers-reduced-motion:no-preference) {
+    .andes-progress-indicator-circular--indeterminate .andes-progress-indicator-circular__circle {
+        animation: andes-pi-circular-dash 1.5s ease-in-out infinite
+    }
+}
+
+@keyframes andes-pi-circular-rotate {
+    to {
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes andes-pi-circular-dash {
+    0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0
+    }
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35
+    }
+    to {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -124
+    }
+}
+
+@keyframes andes-pi-circular-dash-reduce-motion {
+    0% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: 0;
+        opacity: 0
+    }
+    10% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: 0;
+        opacity: 1
+    }
+    60% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: 0;
+        opacity: 1
+    }
+    to {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: 0;
+        opacity: 0
+    }
+}
+
+.andes-progress-indicator-circular--xsmall .andes-progress-indicator-circular__progress,
+.andes-progress-indicator-circular--xsmall .andes-progress-indicator-circular__svg {
+    height: 16px;
+    width: 16px;
+    stroke-width: 2px
+}
+
+.andes-progress-indicator-circular--xsmall .andes-progress-indicator-circular__container {
+    align-items: center
+}
+
+.andes-progress-indicator-circular--xsmall .andes-progress-indicator-circular__label {
+    font-size: 14px;
+    margin-left: 12px
+}
+
+.andes-progress-indicator-circular--small .andes-progress-indicator-circular__progress,
+.andes-progress-indicator-circular--small .andes-progress-indicator-circular__svg {
+    height: 24px;
+    width: 24px;
+    stroke-width: 2.5px
+}
+
+.andes-progress-indicator-circular--small .andes-progress-indicator-circular__container {
+    align-items: center;
+    flex-direction: column
+}
+
+.andes-progress-indicator-circular--small .andes-progress-indicator-circular__label {
+    font-size: 14px;
+    margin-top: 13px
+}
+
+@keyframes andes-button-start-width-animation {
+    0% {
+        width: 0
+    }
+    to {
+        width: 90%
+    }
+}
+
+@keyframes andes-button-start-width-animation-reduce-motion {
+    0% {
+        width: 0
+    }
+    30% {
+        width: 30%
+    }
+    60% {
+        width: 60%
+    }
+    to {
+        width: 90%
+    }
+}
+
+.andes-button {
+    border-radius: 6px;
+    display: inline-block;
+    font-family: Proxima Nova, -apple-system, Roboto, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 24px;
+    text-align: center;
+    width: auto;
+    -webkit-font-smoothing: antialiased
+}
+
+.andes-button:focus {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--andes-color-blue-600, #2968c8), 0 0 0 5px var(--andes-color-blue-300, rgba(65, 137, 230, .3));
+    -moz-box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--andes-color-blue-600, #2968c8), 0 0 0 5px var(--andes-color-blue-300, rgba(65, 137, 230, .3));
+    -webkit-box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--andes-color-blue-600, #2968c8), 0 0 0 5px var(--andes-color-blue-300, rgba(65, 137, 230, .3));
+    outline: none
+}
+
+.andes-button:focus-visible {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--andes-color-blue-600, #2968c8), 0 0 0 5px var(--andes-color-blue-300, rgba(65, 137, 230, .3));
+    -moz-box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--andes-color-blue-600, #2968c8), 0 0 0 5px var(--andes-color-blue-300, rgba(65, 137, 230, .3));
+    -webkit-box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--andes-color-blue-600, #2968c8), 0 0 0 5px var(--andes-color-blue-300, rgba(65, 137, 230, .3));
+    outline: none
+}
+
+.andes-button:focus:not(:focus-visible) {
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    outline: none
+}
+
+@media(prefers-reduced-motion:no-preference) {
+    .andes-button {
+        transition: .18s ease-out;
+        transition-property: background, color
+    }
+}
+
+.andes-button:link {
+    text-decoration: none
+}
+
+.andes-button,
+.andes-button * {
+    box-sizing: border-box
+}
+
+.andes-button svg {
+    display: inline-block;
+    max-height: 1.125em;
+    max-width: 1.125em;
+    vertical-align: middle
+}
+
+.andes-button--full-width {
+    display: block;
+    width: 100%
+}
+
+.andes-button:disabled,
+.andes-button[aria-disabled=true],
+.andes-button[disabled] {
+    pointer-events: none
+}
+
+.andes-button--loading {
+    overflow-y: hidden;
+    position: relative
+}
+
+.andes-button--loading:after,
+.andes-button--loading:before {
+    background-color: var(--andes-color-blue-600, #2968c8);
+    border-color: transparent;
+    border-radius: .2222222222em;
+    box-sizing: content-box;
+    color: #fff;
+    content: "";
+    height: 100%;
+    left: 0;
+    margin: -.0555555556em;
+    padding: .0555555556em;
+    position: absolute;
+    top: 0;
+    transform: scaleX(0);
+    transform-origin: left center;
+    width: 100%
+}
+
+.andes-button--loading:after path[stroke]:not([stroke=none]),
+.andes-button--loading:after svg[stroke]:not([stroke=none]),
+.andes-button--loading:before path[stroke]:not([stroke=none]),
+.andes-button--loading:before svg[stroke]:not([stroke=none]) {
+    stroke: #fff !important
+}
+
+.andes-button--loading:after path[fill]:not([fill=none]),
+.andes-button--loading:after svg[fill]:not([fill=none]),
+.andes-button--loading:before path[fill]:not([fill=none]),
+.andes-button--loading:before svg[fill]:not([fill=none]) {
+    fill: #fff !important
+}
+
+.andes-button--loading .andes-progress-indicator-circular {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%
+}
+
+.andes-button--loading .andes-progress-indicator-circular__container {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    position: relative;
+    width: 100%
+}
+
+@media(prefers-reduced-motion:no-preference) {
+    .andes-button--loading .andes-progress-indicator-circular__container {
+        animation: translateInButtonSpinner .18s forwards
+    }
+}
+
+.andes-button--loading .andes-progress-indicator-circular__progress {
+    display: block
+}
+
+.andes-button--loading .andes-progress-indicator-circular__progress div {
+    align-items: center;
+    display: flex;
+    justify-content: center
+}
+
+.andes-button--loading .andes-progress-indicator-circular__progress .andes-progress-indicator-circular__svg {
+    stroke-width: 6px;
+    position: relative;
+    top: 3px
+}
+
+.andes-button--loading .andes-button__content {
+    display: block;
+    opacity: 0
+}
+
+@media(prefers-reduced-motion:no-preference) {
+    .andes-button--loading .andes-button__content {
+        animation: translateOutButtonSpinner .2s forwards
+    }
+}
+
+.andes-button--loading-complete {
+    overflow-y: hidden
+}
+
+.andes-button--loading-complete .andes-button__content {
+    margin: 0;
+    max-height: none;
+    opacity: 1
+}
+
+@media(prefers-reduced-motion:no-preference) {
+    .andes-button--loading-complete .andes-button__content {
+        animation: translateInButtonSpinnerComplete .2s forwards
+    }
+}
+
+.andes-button__content {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center
+}
+
+.andes-button__content * {
+    display: block;
+    float: left
+}
+
+.andes-button__text {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.andes-button__text+svg,
+svg+.andes-button__text {
+    margin-left: 12px
+}
+
+@keyframes translateInButtonSpinner {
+    0% {
+        opacity: 0;
+        transform: translateY(60%)
+    }
+    40% {
+        opacity: .4;
+        transform: translateY(50%)
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes translateOutButtonSpinner {
+    0% {
+        opacity: 1
+    }
+    80% {
+        opacity: .5;
+        transform: translateY(-30%)
+    }
+    90% {
+        transform: translateY(-40%)
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-60%)
+    }
+}
+
+@keyframes translateInButtonSpinnerComplete {
+    0% {
+        opacity: 0;
+        transform: translateY(65%)
+    }
+    50% {
+        opacity: .5
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+.andes-button--quiet:hover {
+    background-color: var(--andes-color-blue-150, rgba(65, 137, 230, .15));
+    border-color: transparent;
+    color: var(--andes-color-blue-500, #3483fa)
+}
+
+.andes-button--quiet:hover path[stroke]:not([stroke=none]),
+.andes-button--quiet:hover svg[stroke]:not([stroke=none]) {
+    stroke: var(--andes-color-blue-500, #3483fa) !important
+}
+
+.andes-button--quiet:hover path[fill]:not([fill=none]),
+.andes-button--quiet:hover svg[fill]:not([fill=none]) {
+    fill: var(--andes-color-blue-500, #3483fa) !important
+}
+
+@media(min-width:768px) {
+    .andes-button--quiet:hover,
+    .andes-button--quiet:link:hover,
+    .andes-button--quiet:visited:hover {
+        background-color: var(--andes-color-blue-200, rgba(65, 137, 230, .2));
+        border-color: transparent;
+        color: var(--andes-color-blue-500, #3483fa)
+    }
+    .andes-button--quiet:hover path[stroke]:not([stroke=none]),
+    .andes-button--quiet:hover svg[stroke]:not([stroke=none]),
+    .andes-button--quiet:link:hover path[stroke]:not([stroke=none]),
+    .andes-button--quiet:link:hover svg[stroke]:not([stroke=none]),
+    .andes-button--quiet:visited:hover path[stroke]:not([stroke=none]),
+    .andes-button--quiet:visited:hover svg[stroke]:not([stroke=none]) {
+        stroke: var(--andes-color-blue-500, #3483fa) !important
+    }
+    .andes-button--quiet:hover path[fill]:not([fill=none]),
+    .andes-button--quiet:hover svg[fill]:not([fill=none]),
+    .andes-button--quiet:link:hover path[fill]:not([fill=none]),
+    .andes-button--quiet:link:hover svg[fill]:not([fill=none]),
+    .andes-button--quiet:visited:hover path[fill]:not([fill=none]),
+    .andes-button--quiet:visited:hover svg[fill]:not([fill=none]) {
+        fill: var(--andes-color-blue-500, #3483fa) !important
+    }
+}
+
+.andes-button--quiet {
+    box-shadow: 0 0 0 0 #fff;
+    cursor: pointer
+}
+
+@media(prefers-reduced-motion:no-preference) {
+    .andes-button--quiet {
+        transition: box-shadow .25s ease-out, background-color .2s ease-out
+    }
+}
+
+.andes-button--quiet,
+.andes-button--quiet:focus,
+.andes-button--quiet:link,
+.andes-button--quiet:visited {
+    background-color: var(--andes-color-blue-150, rgba(65, 137, 230, .15));
+    border-color: transparent;
+    color: var(--andes-color-blue-500, #3483fa)
+}
+
+.andes-button--quiet path[stroke]:not([stroke=none]),
+.andes-button--quiet svg[stroke]:not([stroke=none]),
+.andes-button--quiet:focus path[stroke]:not([stroke=none]),
+.andes-button--quiet:focus svg[stroke]:not([stroke=none]),
+.andes-button--quiet:link path[stroke]:not([stroke=none]),
+.andes-button--quiet:link svg[stroke]:not([stroke=none]),
+.andes-button--quiet:visited path[stroke]:not([stroke=none]),
+.andes-button--quiet:visited svg[stroke]:not([stroke=none]) {
+    stroke: var(--andes-color-blue-500, #3483fa) !important
+}
+
+.andes-button--quiet path[fill]:not([fill=none]),
+.andes-button--quiet svg[fill]:not([fill=none]),
+.andes-button--quiet:focus path[fill]:not([fill=none]),
+.andes-button--quiet:focus svg[fill]:not([fill=none]),
+.andes-button--quiet:link path[fill]:not([fill=none]),
+.andes-button--quiet:link svg[fill]:not([fill=none]),
+.andes-button--quiet:visited path[fill]:not([fill=none]),
+.andes-button--quiet:visited svg[fill]:not([fill=none]) {
+    fill: var(--andes-color-blue-500, #3483fa) !important
+}
+
+@media(prefers-reduced-motion:no-preference) {
+    .andes-button--quiet:hover {
+        transition: background-color .2s ease-in
+    }
+}
+
+.andes-button--quiet:active {
+    background-color: var(--andes-color-blue-300, rgba(65, 137, 230, .3));
+    border-color: transparent;
+    color: var(--andes-color-blue-500, #3483fa)
+}
+
+.andes-button--quiet:active path[stroke]:not([stroke=none]),
+.andes-button--quiet:active svg[stroke]:not([stroke=none]) {
+    stroke: var(--andes-color-blue-500, #3483fa) !important
+}
+
+.andes-button--quiet:active path[fill]:not([fill=none]),
+.andes-button--quiet:active svg[fill]:not([fill=none]) {
+    fill: var(--andes-color-blue-500, #3483fa) !important
+}
+
+.andes-button--quiet:not(.andes-button--loading,
+.loading):disabled,
+.andes-button--quiet:not(.andes-button--loading,
+.loading)[aria-disabled=true],
+.andes-button--quiet:not(.andes-button--loading,
+.loading)[disabled] {
+    background-clip: padding-box;
+    background-color: rgba(0, 0, 0, .1);
+    border-color: transparent;
+    color: rgba(0, 0, 0, .25);
+    cursor: default
+}
+
+.andes-button--quiet:not(.andes-button--loading,
+.loading):disabled path[stroke]:not([stroke=none]),
+.andes-button--quiet:not(.andes-button--loading,
+.loading):disabled svg[stroke]:not([stroke=none]),
+.andes-button--quiet:not(.andes-button--loading,
+.loading)[aria-disabled=true] path[stroke]:not([stroke=none]),
+.andes-button--quiet:not(.andes-button--loading,
+.loading)[aria-disabled=true] svg[stroke]:not([stroke=none]),
+.andes-button--quiet:not(.andes-button--loading,
+.loading)[disabled] path[stroke]:not([stroke=none]),
+.andes-button--quiet:not(.andes-button--loading,
+.loading)[disabled] svg[stroke]:not([stroke=none]) {
+    stroke: rgba(0, 0, 0, .25) !important
+}
+
+.andes-button--quiet:not(.andes-button--loading,
+.loading):disabled path[fill]:not([fill=none]),
+.andes-button--quiet:not(.andes-button--loading,
+.loading):disabled svg[fill]:not([fill=none]),
+.andes-button--quiet:not(.andes-button--loading,
+.loading)[aria-disabled=true] path[fill]:not([fill=none]),
+.andes-button--quiet:not(.andes-button--loading,
+.loading)[aria-disabled=true] svg[fill]:not([fill=none]),
+.andes-button--quiet:not(.andes-button--loading,
+.loading)[disabled] path[fill]:not([fill=none]),
+.andes-button--quiet:not(.andes-button--loading,
+.loading)[disabled] svg[fill]:not([fill=none]) {
+    fill: rgba(0, 0, 0, .25) !important
+}
+
+.andes-button--medium {
+    border-radius: 5px;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 12px
+}
+
+.andes-button--medium .andes-button__text+svg,
+.andes-button--medium svg+.andes-button__text {
+    margin-left: 8px
+}
+
+.andes-button--medium .andes-progress-indicator-circular__progress .andes-progress-indicator-circular__svg {
+    top: 0
+}
+
+.andes-button--medium.andes-button--loading-complete .andes-button__content {
+    animation: translateInButtonSpinnerCompleteMedium .2s, fadeIn .2s;
+    animation-fill-mode: forwards
+}
+
+@keyframes translateInButtonSpinnerCompleteMedium {
+    0% {
+        transform: translateY(50%)
+    }
+    to {
+        transform: translateY(calc(-50% + 13px))
+    }
+}
+
+.generic-card__wrapper {
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 4px;
+    display: inline-flex;
+    width: 100%
+}
+
+.generic-card__wrapper .grid-container__col {
+    align-self: center
+}
+
+.generic-card__wrapper .generic-card-icon {
+    border-right: 1px solid rgba(0, 0, 0, .1);
+    display: block;
+    margin: 16px 0;
+    padding: 0 16px;
+    width: 152px
+}
+
+.generic-card__wrapper .generic-card-column--action,
+.generic-card__wrapper .generic-card-column--icon {
+    flex-grow: 0
+}
+
+.generic-card__wrapper .generic-card-column--action {
+    padding: 28px 16px;
+    white-space: nowrap
+}
+
+.generic-card__wrapper .generic-card-column--info {
+    padding-left: 16px
+}
+
+.grid-container__col.generic-info-column--icon,
+.grid-container__col.payment-method-column--icon {
+    flex-grow: 0;
+    margin-right: 16px
+}
+
+.grid-container__col.generic-info-column--info,
+.grid-container__col.payment-method-column--info {
+    padding-top: 6px
+}
+
+.grid-container__col .payment-list__subtitle {
+    margin-top: 2px
+}
+
+.grid-container__col .payment-list__subtitle:first-child {
+    margin-top: 0
+}
+
+.grid-container__col.generic-info-column--icon,
+.grid-container__col.payment-method-column--icon {
+    min-width: 48px
+}
+

@@ -1,0 +1,20 @@
+@font-face{font-family:"Proxima Nova";font-style:normal;font-weight:300;font-display:swap;src:url("../assets/mlstatic/ui/webfonts/v3.0.0/proxima-nova/proximanova-light.woff2") format("woff2")}
+@font-face{font-family:"Proxima Nova";font-style:normal;font-weight:400;font-display:swap;src:url("../assets/mlstatic/ui/webfonts/v3.0.0/proxima-nova/proximanova-regular.woff2") format("woff2")}
+@font-face{font-family:"Proxima Nova";font-style:normal;font-weight:600;font-display:swap;src:url("../assets/mlstatic/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2") format("woff2")}
+@font-face{font-family:navigation;font-style:normal;font-weight:400;font-display:block;src:url("../assets/mlstatic/frontend-assets/ml-web-navigation/ui-navigation/6.6.53-beta.0/mercadolibre/navigation.woff2") format("woff2")}
+
+.nav-logo,[data-country=BR] .nav-logo,[data-country=PT] .nav-logo{background-image:url("../assets/mlstatic/frontend-assets/ml-web-navigation/ui-navigation/6.6.139/mercadolibre/pt_logo_large_plus@2x.webp")!important;background-repeat:no-repeat;background-size:contain!important;width:134px;height:34px}
+.nav-icon-cart:before,.nav-icon-search:before,.nav-icon-home:before,.nav-icon-categories-mobile:before,.nav-icon-deals-mobile:before,.nav-icon-download-mobile:before,.nav-icon-chevron-up:before,.nav-icon-cp-location-mobile:before,.nav-menu-cp:before{content:""!important;display:inline-block;font-family:inherit!important;background-repeat:no-repeat;background-position:center;background-size:contain;vertical-align:middle}
+.nav-icon-cart:before{background-image:url("../assets/ui/nav-cart.svg");width:22px!important;height:22px!important}
+.nav-icon-search:before{background-image:url("../assets/ui/nav-search.svg");width:18px!important;height:18px!important}
+.nav-menu-cp:before,.nav-icon-cp-location-mobile:before{background-image:url("../assets/ui/nav-location.svg");width:22px!important;height:24px!important}
+.nav-icon-home:before{background-image:url("../assets/ui/nav-home.svg");width:22px!important;height:22px!important}
+.nav-icon-categories-mobile:before{background-image:url("../assets/ui/nav-categories.svg");width:22px!important;height:22px!important}
+.nav-icon-deals-mobile:before{background-image:url("../assets/ui/nav-deals.svg");width:22px!important;height:22px!important}
+.nav-icon-download-mobile:before{background-image:url("../assets/ui/nav-download.svg");width:22px!important;height:22px!important}
+.nav-icon-chevron-up:before{background-image:url("../assets/ui/nav-chevron-up.svg");width:18px!important;height:18px!important}
+@media screen and (max-width:767px){
+
+.nav-header .nav-logo,.nav-header-plus .nav-logo,[data-country=BR] .nav-header .nav-logo,[data-country=PT] .nav-header .nav-logo{width:44px!important;height:32px!important;background-image:url("../assets/mlstatic/frontend-assets/ml-web-navigation/ui-navigation/6.6.139/mercadolibre/pt_logo_large_plus@2x.webp")!important;background-size:122.18px 31px!important;background-position:left center!important}
+.nav-cart .nav-icon-cart:before{vertical-align:middle}
+}

@@ -1,0 +1,19 @@
+#mobile,
+#desktop1,
+#desktop2 {
+    display: none
+}
+
+@media screen and (max-width: 767px) {
+    #mobile {
+        display: block
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #desktop1,
+    #desktop2 {
+        display: block
+    }
+}
+

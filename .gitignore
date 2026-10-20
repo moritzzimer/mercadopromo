@@ -1,0 +1,12 @@
+# Segredos e ambientes locais — NUNCA commitar chaves reais
+.env
+.env.*
+!.env.example
+
+# Pacotes e dependências
+node_modules/
+
+# Artefatos de deploy temporários
+deploy-payload.json
+_deploy.zip
+*.log
