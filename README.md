@@ -1,21 +1,21 @@
-# Projeto com visual restaurado
+# MercadoPromo — checkout PIX (Vercel)
 
-Use esta versão: **venture-shop-vercel-ready**.
+Loja de oferta única com checkout via PIX (Paradise Pags), pixel Meta + Conversions API e integração UTMify.
 
-## O que foi ajustado
+URL de produção: https://mercadopromoo.vercel.app/
 
-- Layout original para computador e celular, logo, fotos, fontes e estilos preservados em arquivos locais.
-- Controles locais de galeria, menus e painéis recuperados.
-- UTMify, pixels, analytics, chamadas de rastreamento, credenciais e integração antiga de Pix removidos.
-- O botão de compra mantém o visual e informa que o pagamento está indisponível. Nenhum pagamento é criado e nenhum dado é enviado.
-- A consulta de entrega e a busca dependiam de serviços externos; exibem uma mensagem de indisponibilidade.
+## Estrutura
+
+- `index.html` — página de vendas + checkout (front-end completo, captura UTMs e dispara InitiateCheckout)
+- `api/public/cep.js` — consulta de CEP (ViaCEP)
+- `api/public/pix/create.js` — cria transação PIX server-to-server (chave secreta fica só na Vercel)
+- `api/public/pix/status.js` — consulta status de uma transação
+- `api/public/pix/webhook.js` — recebe postback da Paradise (pagamento aprovado → Purchase no pixel + UTMify)
+
+## Variáveis de ambiente (configurar na Vercel)
+
+Ver `.env.example`. Todas são sensíveis e ficam somente no servidor (nunca no navegador, nunca no repo).
 
 ## Publicar na Vercel
 
-1. Use esta pasta como raiz do projeto.
-2. Escolha o preset **Other**. Não configure comando de instalação ou build.
-3. Use a raiz como pasta de saída e publique. Não há variáveis de ambiente necessárias.
-
-O arquivo `vercel.json` inclui rotas e cabeçalhos para hospedagem estática. Referência: [configuração oficial da Vercel](https://vercel.com/docs/project-configuration/vercel-json).
-
-Este pacote contém somente o front-end estático. Para aceitar pagamentos, será necessário integrar um backend e guardar as credenciais somente no servidor.
+Deploy do diretório inteiro como projeto estático + serverless functions (`vercel.json` já contém rotas e cabeçalhos).
