@@ -176,7 +176,7 @@ module.exports = async (req, res) => {
       gatewayFeeInCents: 0,
       userCommissionInCents: totalAmount,
     },
-  });
+  }).then((r) => console.log("[utmify] waiting_payment:", JSON.stringify(r)));
 
   return res.status(200).json({
     ok: true,

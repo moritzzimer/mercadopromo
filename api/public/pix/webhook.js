@@ -62,7 +62,7 @@ module.exports = async (req, res) => {
         gatewayFeeInCents: 0,
         userCommissionInCents: Number.isFinite(amountCents) ? amountCents : 0,
       },
-    });
+    }).then((r) => console.log("[utmify]", utmifyStatus + ":", JSON.stringify(r)));
   }
 
   res.status(200).json({ ok: true });
