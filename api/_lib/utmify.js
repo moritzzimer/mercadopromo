@@ -16,7 +16,9 @@ async function sendOrder(order) {
       },
       body: JSON.stringify(order),
     });
-    return { ok: resp.ok, status: resp.status };
+    let bodyText = null;
+    try { bodyText = (await resp.text()).slice(0, 400); } catch { bodyText = null; }
+    return { ok: resp.ok, status: resp.status, body: bodyText };
   } catch (err) {
     return { ok: false, error: String((err && err.message) || err) };
   }

@@ -19,13 +19,35 @@ module.exports = async (req, res) => {
   const statusMap = { approved: "paid", refunded: "refunded", chargeback: "chargeback" };
   const utmifyStatus = statusMap[evt.status];
 
+  let utmifyResult = null;
   if (utmifyStatus) {
     const utmify = require("../../_lib/utmify");
+    const catalog = require("../../_lib/catalog");
     const tracking = evt.tracking || {};
     const evtTime = String(evt.timestamp || "").replace("T", " ").slice(0, 19) || null;
     const amountCents = parseInt(evt.amount, 10);
-    const productName = process.env.PIX_PRODUCT_NAME || "Revólver Pressão M701 Co2 Preto Full Metal 4.5mm Completo";
-    utmify.sendOrder({
+
+    // Reconstrói o pedido exatamente como no create.js.
+    // O postback da Paradise pode trazer customer_data (cópia do JSON de criação);
+    // a descrição gerada por catalog.buildDescription permite recuperar qty + bumps.
+    let quantity = 1;
+    let bumpIds = [];
+    const cd = evt.customer_data;
+    const desc = (cd && typeof cd === "object" && cd.description) ? String(cd.description) : "";
+    if (desc) {
+      const parsed = catalog.parseDescription(desc);
+      quantity = parsed.quantity;
+      bumpIds = parsed.bumpIds;
+    }
+    const products = catalog.buildProducts(quantity, bumpIds);
+
+    // Total: confia no amount do postback se válido; senão recalcula pelo catálogo.
+    // NUNCA envia null — a Utmify recusa pedido com priceInCents nulo.
+    const fallbackTotal = catalog.orderTotalCents(quantity, bumpIds);
+    const safeTotal = Number.isFinite(amountCents) && amountCents > 0 ? amountCents : fallbackTotal;
+
+    try {
+      utmifyResult = await utmify.sendOrder({
       orderId: String(evt.external_id || evt.transaction_id || ""),
       platform: "ParadisePags",
       paymentMethod: "pix",
@@ -40,14 +62,7 @@ module.exports = async (req, res) => {
         document: (evt.customer && evt.customer.document) || "",
         country: "BR",
       },
-      products: [{
-        id: "rev-m701-co2",
-        name: productName,
-        planId: null,
-        planName: null,
-        quantity: 1,
-        priceInCents: Number.isFinite(amountCents) ? amountCents : null,
-      }],
+      products,
       trackingParameters: {
         src: tracking.src || null,
         sck: tracking.sck || null,
@@ -58,12 +73,15 @@ module.exports = async (req, res) => {
         utm_term: tracking.utm_term || null,
       },
       commission: {
-        totalPriceInCents: Number.isFinite(amountCents) ? amountCents : 0,
+        totalPriceInCents: safeTotal,
         gatewayFeeInCents: 0,
-        userCommissionInCents: Number.isFinite(amountCents) ? amountCents : 0,
+        userCommissionInCents: safeTotal,
       },
-    }).then((r) => console.log("[utmify]", utmifyStatus + ":", JSON.stringify(r)));
+      });
+    } catch (e) {
+      utmifyResult = { ok: false, error: String((e && e.message) || e) };
+    }
   }
 
-  res.status(200).json({ ok: true });
+  res.status(200).json({ ok: true, utmify: utmifyResult });
 };

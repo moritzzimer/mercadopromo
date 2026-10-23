@@ -3,17 +3,12 @@
 
 const API_BASE = process.env.PARADISE_API_BASE || "https://oferta-processamento.org.ua/api/v1";
 
-const DEFAULT_PRODUCT = "Revólver Pressão M701 Co2 Preto Full Metal 4.5mm Completo";
+const catalog = require("../../_lib/catalog");
+const DEFAULT_PRODUCT = catalog.DEFAULT_PRODUCT;
 
-// Catálogo oficial de order bumps (id => preço em centavos). O cliente envia os ids;
-// o preço SEMPRE vem daqui — nunca do navegador.
-const ORDER_BUMPS = {
-  "chumbinhos-500": { name: "Kit 500 Chumbinhos 4.5mm Diabolo", priceCents: 2990 },
-  "co2-5caps": { name: "Kit 5 Cápsulas CO2 12g", priceCents: 3990 },
-  "coldre": { name: "Coldre Tático Universal", priceCents: 3490 },
-  "oleo-silicone": { name: "Óleo Lubrificante de Silicone para Airgun", priceCents: 1990 },
-  "alvos-50": { name: "Kit 50 Alvos de Papel + Suporte", priceCents: 1490 },
-};
+// Catálogo oficial de order bumps (id => { id estável, nome, preço em centavos }).
+// O preço SEMPRE vem daqui — nunca do navegador.
+const ORDER_BUMPS = catalog.ORDER_BUMPS;
 
 function sanitize(str, max = 120) {
   return String(str || "")
@@ -79,24 +74,18 @@ module.exports = async (req, res) => {
   if (quantity > MAX_QTY) quantity = MAX_QTY;
 
   // Order bump: itens adicionais selecionados no checkout
-  const selectedBumps = [];
+  const bumpIds = [];
   if (Array.isArray(body.bumps)) {
     for (const id of body.bumps.slice(0, 10)) {
-      const bump = ORDER_BUMPS[String(id)];
-      if (bump) selectedBumps.push(bump);
+      if (ORDER_BUMPS[String(id)]) bumpIds.push(String(id));
     }
   }
-  const bumpsTotal = selectedBumps.reduce((sum, b) => sum + b.priceCents, 0);
-  const productTotal = amount * quantity;
-  const totalAmount = productTotal + bumpsTotal;
+  const totalAmount = catalog.orderTotalCents(quantity, bumpIds);
 
   const reference = "VS-" + Date.now() + "-" + Math.random().toString(36).slice(2, 8).toUpperCase();
 
-  const productName = process.env.PIX_PRODUCT_NAME || DEFAULT_PRODUCT;
-  const qtyPrefix = quantity > 1 ? quantity + "x " : "";
-  const fullDescription = qtyPrefix + (selectedBumps.length
-    ? productName + " + " + selectedBumps.map((b) => b.name).join(" + ")
-    : productName);
+  const productName = catalog.productName();
+  const fullDescription = catalog.buildDescription(quantity, bumpIds);
 
   const payload = {
     amount: totalAmount,
@@ -143,24 +132,13 @@ module.exports = async (req, res) => {
     return res.status(502).json({ ok: false, message: msg });
   }
 
-  // Notifica a Utmify (pedido aguardando pagamento) — não bloqueia a resposta ao cliente
+  // Notifica a Utmify (pedido aguardando pagamento).
+  // Aguarda a resposta e a inclui no JSON para diagnóstico do funil.
   const utmify = require("../../_lib/utmify");
-  const products = [{
-    id: "rev-m701-co2",
-    name: productName,
-    planId: null,
-    planName: null,
-    quantity: quantity,
-    priceInCents: amount,
-  }].concat(selectedBumps.map((b) => ({
-    id: null,
-    name: b.name,
-    planId: null,
-    planName: null,
-    quantity: 1,
-    priceInCents: b.priceCents,
-  })));
-  utmify.sendOrder({
+  const products = catalog.buildProducts(quantity, bumpIds);
+  let utmifyResult = { skipped: true };
+  try {
+    utmifyResult = await utmify.sendOrder({
     orderId: reference,
     platform: "ParadisePags",
     paymentMethod: "pix",
@@ -184,7 +162,10 @@ module.exports = async (req, res) => {
       gatewayFeeInCents: 0,
       userCommissionInCents: totalAmount,
     },
-  }).then((r) => console.log("[utmify] waiting_payment:", JSON.stringify(r)));
+  });
+  } catch (e) {
+    utmifyResult = { ok: false, error: String((e && e.message) || e) };
+  }
 
   return res.status(200).json({
     ok: true,
@@ -194,5 +175,6 @@ module.exports = async (req, res) => {
     qr_code_base64: data.qr_code_base64 || null,
     amount: data.amount || totalAmount,
     expires_at: data.expires_at || null,
+    utmify: utmifyResult,
   });
 };
