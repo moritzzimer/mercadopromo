@@ -72,6 +72,12 @@ module.exports = async (req, res) => {
     return res.status(500).json({ ok: false, message: "Valor do produto inválido no servidor." });
   }
 
+  // Quantidade: vem do carrinho, limitada ao estoque anunciado (23)
+  const MAX_QTY = 23;
+  let quantity = parseInt(body.quantity, 10);
+  if (!Number.isFinite(quantity) || quantity < 1) quantity = 1;
+  if (quantity > MAX_QTY) quantity = MAX_QTY;
+
   // Order bump: itens adicionais selecionados no checkout
   const selectedBumps = [];
   if (Array.isArray(body.bumps)) {
@@ -81,14 +87,16 @@ module.exports = async (req, res) => {
     }
   }
   const bumpsTotal = selectedBumps.reduce((sum, b) => sum + b.priceCents, 0);
-  const totalAmount = amount + bumpsTotal;
+  const productTotal = amount * quantity;
+  const totalAmount = productTotal + bumpsTotal;
 
   const reference = "VS-" + Date.now() + "-" + Math.random().toString(36).slice(2, 8).toUpperCase();
 
   const productName = process.env.PIX_PRODUCT_NAME || DEFAULT_PRODUCT;
-  const fullDescription = selectedBumps.length
+  const qtyPrefix = quantity > 1 ? quantity + "x " : "";
+  const fullDescription = qtyPrefix + (selectedBumps.length
     ? productName + " + " + selectedBumps.map((b) => b.name).join(" + ")
-    : productName;
+    : productName);
 
   const payload = {
     amount: totalAmount,
@@ -142,7 +150,7 @@ module.exports = async (req, res) => {
     name: productName,
     planId: null,
     planName: null,
-    quantity: 1,
+    quantity: quantity,
     priceInCents: amount,
   }].concat(selectedBumps.map((b) => ({
     id: null,

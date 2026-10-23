@@ -11503,12 +11503,12 @@
         <button class="pix-card-title" id="pixCartToggle" type="button">SEU CARRINHO<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/></svg></button>
         <div class="pix-cart-body">
           <div class="pix-cart-item">
-            <span class="pix-cart-qty">1</span>
+            <span class="pix-cart-qty" id="pixCartQtyBadge">1</span>
             <img src="screen_files/D_NQ_NP_672923-MLB87910987630_072025-O.webp" alt="Revólver Pressão M701 Co2 Preto Full Metal 4.5mm">
             <div class="pix-cart-info"><b>Revólver Pressão M701 Co2 Preto Full Metal 4.5mm Completo</b><button class="pix-cart-remove" id="pixRemoveLink" type="button">Remover produto</button></div>
-            <div class="pix-cart-price">R$ 87,90<em class="pix-off-pill">71% OFF NO PIX</em></div>
+            <div class="pix-cart-price" id="pixCartPrice">R$ 87,90<em class="pix-off-pill">71% OFF NO PIX</em></div>
           </div>
-          <div class="pix-cart-row"><span>Subtotal · 1 item</span><b>R$ 87,90</b></div>
+          <div class="pix-cart-row"><span id="pixCartSubLabel">Subtotal · 1 item</span><b id="pixCartSubtotal">R$ 87,90</b></div>
           <div class="pix-cart-row"><span>Frete</span><b class="pix-cart-ship">Grátis</b></div>
           <div class="pix-cart-total"><span>Total</span><b id="pixCartTotal">R$ 87,90</b></div>
         </div>
@@ -11719,7 +11719,7 @@ try{var __vsLead=JSON.parse(localStorage.getItem('lead')||'null');if(__vsLead&&_
       errBox=document.getElementById('pixError'),qrImg=document.getElementById('pixQrImg'),qrBox=document.getElementById('pixQrBox'),
       codeBox=document.getElementById('pixCode'),copyBtn=document.getElementById('pixCopyBtn'),
       statusMsg=document.getElementById('pixStatusMsg'),paidBtn=document.getElementById('pixPaidBtn'),buyBtns=document.querySelectorAll('#ds2,button[data-ui-action="comprarAgora"],button[data-ui-action="paymentUnavailable"]'),
-      PAY_BTN_HTML='<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 8h-1V6a5 5 0 0 0-10 0v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zm-6 9a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2zm3.1-9H8.9V6a3.1 3.1 0 0 1 6.2 0v2z"/></svg><span>Gerar código Pix</span>',pollTimer=null,bumpChecks=document.querySelectorAll('.pix-bump-check'),totalBox=document.getElementById('pixTotalAmount'),BASE_CENTS=8790,PRODUCT_VALUE=87.00,PRODUCT_NAME='Revólver Pressão M701 Co2 Preto Full Metal 4.5mm Completo',
+      PAY_BTN_HTML='<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 8h-1V6a5 5 0 0 0-10 0v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zm-6 9a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2zm3.1-9H8.9V6a3.1 3.1 0 0 1 6.2 0v2z"/></svg><span>Gerar código Pix</span>',pollTimer=null,bumpChecks=document.querySelectorAll('.pix-bump-check'),totalBox=document.getElementById('pixTotalAmount'),UNIT_CENTS=8790,PRODUCT_VALUE=87.00,PRODUCT_NAME='Revólver Pressão M701 Co2 Preto Full Metal 4.5mm Completo',MAX_QTY=23,QTY_KEY='vsQty',getQty=function(){try{var q=parseInt(localStorage.getItem(QTY_KEY)||'1',10);if(!isFinite(q)||q<1){q=1;}if(q>MAX_QTY){q=MAX_QTY;}return q;}catch(e){return 1;}},
       utmKeys=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','src','sck'],tracking={};
   (function captureUtms(){
     try{
@@ -11730,12 +11730,14 @@ try{var __vsLead=JSON.parse(localStorage.getItem('lead')||'null');if(__vsLead&&_
     }catch(e){}
   })();
   function fmtCents(c){return 'R$ '+(c/100).toFixed(2).replace('.',',');}
-  function updateTotal(){var t=BASE_CENTS;bumpChecks.forEach(function(c){if(c.checked){t+=parseInt(c.dataset.cents,10)||0;}});if(totalBox){totalBox.textContent=fmtCents(t);}var ct=document.getElementById('pixCartTotal');if(ct){ct.textContent=fmtCents(t);}var pv=document.getElementById('pixPixValue');if(pv){pv.textContent=fmtCents(t);}return t;}
+  function updateTotal(){var t=UNIT_CENTS*getQty();bumpChecks.forEach(function(c){if(c.checked){t+=parseInt(c.dataset.cents,10)||0;}});if(totalBox){totalBox.textContent=fmtCents(t);}var ct=document.getElementById('pixCartTotal');if(ct){ct.textContent=fmtCents(t);}var pv=document.getElementById('pixPixValue');if(pv){pv.textContent=fmtCents(t);}return t;}
+  function syncCartUI(){var q=getQty(),sub=UNIT_CENTS*q;var b=document.getElementById('pixCartQtyBadge');if(b){b.textContent=String(q);}var p=document.getElementById('pixCartPrice');if(p&&p.firstChild){p.firstChild.nodeValue=fmtCents(sub);}var sl=document.getElementById('pixCartSubLabel');if(sl){sl.textContent='Subtotal · '+q+(q>1?' itens':' item');}var st=document.getElementById('pixCartSubtotal');if(st){st.textContent=fmtCents(sub);}updateTotal();}
+  window.__vsSyncCart=syncCartUI;
   bumpChecks.forEach(function(c){c.addEventListener('change',function(){updateTotal();saveDraft();});});
   var payBar=document.getElementById('pixPayBar'),DRAFT_KEY='vsCheckoutDraft',navPushed=false;
   function saveDraft(){try{var d={};try{d=JSON.parse(localStorage.getItem(DRAFT_KEY)||'{}')||{};}catch(e){d={};}['pixName','pixEmail','pixDoc','pixPhone','pixCep','pixStreet','pixNumber','pixComplement','pixDistrict','pixCity','pixState'].forEach(function(id){var el=document.getElementById(id);if(!el){return;}var v=el.value;if(v&&v.trim()){d[id]=v;}});var bm=[];bumpChecks.forEach(function(c){if(c.checked){bm.push(c.dataset.id);}});d.__bumps=bm;localStorage.setItem(DRAFT_KEY,JSON.stringify(d));}catch(e){}}
   function restoreDraft(onlyEmpty){try{var d=JSON.parse(localStorage.getItem(DRAFT_KEY)||'{}');Object.keys(d).forEach(function(id){if(id==='__bumps'){return;}var el=document.getElementById(id);if(el&&el.tagName==='INPUT'){if(onlyEmpty&&el.value&&el.value.trim()){return;}el.value=d[id]||'';}});if(!onlyEmpty&&d.__bumps){bumpChecks.forEach(function(c){c.checked=d.__bumps.indexOf(c.dataset.id)>-1;});}updateTotal();syncBumpCards();}catch(e){}}
-  function openModal(push){if(push!==false){try{navPushed=true;history.pushState({vsCheckout:1},'','/checkout'+location.search);}catch(e){}if(window.fbq){fbq('track','InitiateCheckout');}}modal.classList.add('pix-on');modal.classList.add('pix-page');document.body.style.overflow='hidden';overlay.style.display='none';restoreDraft();stepForm.scrollTop=0;payBar.style.display=stepQr.style.display==='block'?'none':'';}
+  function openModal(push){if(push!==false){try{navPushed=true;history.pushState({vsCheckout:1},'','/checkout'+location.search);}catch(e){}if(window.fbq){fbq('track','InitiateCheckout');}}modal.classList.add('pix-on');modal.classList.add('pix-page');document.body.style.overflow='hidden';overlay.style.display='none';restoreDraft();syncCartUI();stepForm.scrollTop=0;payBar.style.display=stepQr.style.display==='block'?'none':'';}
   function closeModal(){modal.classList.remove('pix-on');modal.classList.remove('pix-page');document.body.style.overflow='';if(pollTimer){clearInterval(pollTimer);pollTimer=null;}if(navPushed){navPushed=false;try{history.back();}catch(e){}}}
   window.addEventListener('popstate',function(){if(/\/checkout\/?$/.test(location.pathname)){openModal(false);}else{modal.classList.remove('pix-on');modal.classList.remove('pix-page');document.body.style.overflow='';if(pollTimer){clearInterval(pollTimer);pollTimer=null;}}});
   if(/\/checkout\/?$/.test(location.pathname)){try{history.replaceState({vsCheckout:1},'','/checkout'+location.search);}catch(e){}openModal(false);}
@@ -11843,7 +11845,7 @@ try{var __vsLead=JSON.parse(localStorage.getItem('lead')||'null');if(__vsLead&&_
     if(cepDigits.length!==8){showError('Informe um CEP válido com 8 dígitos.');cepInput.focus();return;}
     payBtn.disabled=true;
     payBtn.innerHTML='<span class="pix-spinner"></span>Gerando…';
-    var data={name:nm,email:em,document:docDigits,phone:phoneDigits,tracking:tracking};var bumpIds=[];bumpChecks.forEach(function(c){if(c.checked){bumpIds.push(c.dataset.id);}});if(bumpIds.length){data.bumps=bumpIds;}
+    var data={name:nm,email:em,document:docDigits,phone:phoneDigits,quantity:getQty(),tracking:tracking};var bumpIds=[];bumpChecks.forEach(function(c){if(c.checked){bumpIds.push(c.dataset.id);}});if(bumpIds.length){data.bumps=bumpIds;}
     fetch('/api/public/pix/create',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
       .then(function(r){return r.json().then(function(j){return{status:r.status,body:j};});})
       .then(function(res){
@@ -11925,6 +11927,60 @@ try{var __vsLead=JSON.parse(localStorage.getItem('lead')||'null');if(__vsLead&&_
   function syncBumpCards(){var cards=document.querySelectorAll('.pix-bump-card');for(var ci=0;ci<cards.length;ci++){var card=cards[ci],inp=card.querySelector('.pix-bump-check');if(!inp){continue;}card.classList.toggle('pix-bump-on',inp.checked);var t=card.querySelector('.pix-bump-btn-txt');if(t){t.textContent=inp.checked?'\u2713 ADICIONADO':'PEGAR OFERTA!';}}}
   var bumpBtns=document.querySelectorAll('.pix-bump-btn');
   for(var bb=0;bb<bumpBtns.length;bb++){(function(btn){btn.addEventListener('click',function(){var card=btn.parentNode;if(!card){return;}var inp=card.querySelector('.pix-bump-check');if(!inp){return;}inp.checked=!inp.checked;inp.dispatchEvent(new Event('change',{bubbles:true}));syncBumpCards();});})(bumpBtns[bb]);}
+})();</script>
+<script>
+/* Seletor de quantidade (página do produto) */
+(function(){
+  var MAX_QTY=23,QTY_KEY='vsQty';
+  function getQ(){try{var q=parseInt(localStorage.getItem(QTY_KEY)||'1',10);if(!isFinite(q)||q<1){q=1;}if(q>MAX_QTY){q=MAX_QTY;}return q;}catch(e){return 1;}}
+  function setQ(q){q=Math.max(1,Math.min(MAX_QTY,parseInt(q,10)||1));try{localStorage.setItem(QTY_KEY,String(q));}catch(e){}paint(q);if(window.__vsSyncCart){try{window.__vsSyncCart();}catch(e){}}}
+  function paint(q){
+    var d=document.querySelector('#quantity-selector .ui-pdp-buybox__quantity__selected');
+    if(d){d.textContent=q+(q>1?' unidades':' unidade');}
+    var m=document.querySelector('#quantity-selector11 .ui-pdp-action-row__selected');
+    if(m){m.textContent=String(q);}
+  }
+  var pop=null;
+  function buildPop(anchor){
+    if(pop&&pop.parentNode){pop.parentNode.removeChild(pop);}
+    pop=document.createElement('div');
+    pop.id='vs-qty-pop';
+    var r=anchor.getBoundingClientRect();
+    pop.style.cssText='position:absolute;z-index:999999;background:#fff;border:1px solid #e5e5e5;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.18);max-height:280px;overflow-y:auto;min-width:200px;padding:6px;';
+    pop.style.top=(r.bottom+window.scrollY+6)+'px';
+    pop.style.left=(r.left+window.scrollX)+'px';
+    for(var i=1;i<=MAX_QTY;i++){
+      (function(n){
+        var b=document.createElement('button');
+        b.type='button';
+        b.textContent=n+(n>1?' unidades':' unidade');
+        b.style.cssText='display:block;width:100%;text-align:left;padding:10px 14px;border:0;background:'+(n===getQ()?'#e3f0ff':'#fff')+';color:'+(n===getQ()?'#3483fa':'rgba(0,0,0,.9)')+';font-size:15px;font-family:inherit;cursor:pointer;border-radius:6px;';
+        b.onmouseenter=function(){b.style.background='#f5f5f5';};
+        b.onmouseleave=function(){b.style.background=n===getQ()?'#e3f0ff':'#fff';};
+        b.addEventListener('click',function(){setQ(n);closePop();});
+        pop.appendChild(b);
+      })(i);
+    }
+    document.body.appendChild(pop);
+  }
+  function closePop(){if(pop&&pop.parentNode){pop.parentNode.removeChild(pop);pop=null;}}
+  document.addEventListener('click',function(e){
+    if(pop&&!pop.contains(e.target)){
+      var a=e.target.closest?e.target.closest('#quantity-selector,#quantity-selector11'):null;
+      if(!a){closePop();}
+    }
+  },true);
+  function bind(sel){
+    var el=document.querySelector(sel);
+    if(!el){return;}
+    el.addEventListener('click',function(e){
+      e.preventDefault();e.stopPropagation();
+      if(pop){closePop();}else{buildPop(el);}
+    });
+  }
+  bind('#quantity-selector');
+  bind('#quantity-selector11');
+  paint(getQ());
 })();
 </script>
 </body></html>
