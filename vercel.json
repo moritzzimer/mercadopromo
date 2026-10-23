@@ -8,6 +8,10 @@
     {
       "source": "/produto",
       "destination": "/"
+    },
+    {
+      "source": "/checkout",
+      "destination": "/"
     }
   ],
   "headers": [

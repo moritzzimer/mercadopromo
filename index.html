@@ -909,25 +909,6 @@
       </figure>
     </span>
   
-    <input class="ui-pdp-gallery__input" type="radio" name="gallery-radio" id="gallery-thumbnail-45023268339963" readonly value="3">
-    <span class="ui-pdp-gallery__wrapper">
-      <label for="gallery-thumbnail-45023268339963" class="ui-pdp-gallery__label">
-        <div role="presentation" class="ui-pdp-thumbnail ui-pdp-gallery__thumbnail">
-          <div class="ui-pdp-thumbnail__picture">
-            <img width="44" height="44" decoding="async" class="ui-pdp-image open-by-default" src="screen_files/D_NQ_NP_922968-MLB88248459853_072025-O.webp" alt="Revólver Pressão M701 Co2 Preto Full Metal 4.5mm Completo - Image 3">
-          </div>
-        </div>
-      </label>
-      
-      <figure class="ui-pdp-gallery__figure">
-  
-    
-
-           <img style="background: #fff;" class="ui-pdp-image ui-pdp-gallery__figure__image" src="screen_files/D_NQ_NP_922968-MLB88248459853_072025-O.webp" data-zoom="3" alt="Revólver Pressão M701 Co2 Preto Full Metal 4.5mm Completo - Image 3">
-      
- 
-      </figure>
-    </span>
   
     <input class="ui-pdp-gallery__input" type="radio" name="gallery-radio" id="gallery-thumbnail-45023268372731" readonly value="4">
     <span class="ui-pdp-gallery__wrapper">
@@ -11356,90 +11337,134 @@
 
 </div></div></main></div></div></div></main></div><link rel="stylesheet" href="assets/visual-fixes.css"><style>
 #pixOverlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9999999;display:none}
-#pixModal{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;border-radius:12px;max-width:480px;width:94%;max-height:94vh;overflow:hidden;z-index:99999999;display:none;flex-direction:column;font-family:Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;box-shadow:0 16px 48px rgba(0,0,0,.35);padding:0;color:rgba(0,0,0,.9)}
+#pixModal{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#f4f4f4;max-width:480px;width:94%;max-height:94vh;overflow:hidden;z-index:99999999;display:none;flex-direction:column;font-family:Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;box-shadow:0 16px 48px rgba(0,0,0,.35);padding:0;color:#333}
 #pixModal.pix-on{display:flex}
 #pixModal *{box-sizing:border-box}
 #pixModal h2{margin:0}
-.pix-header{background:#3483fa;color:#fff;padding:16px 20px 0;position:relative;flex:none}
-.pix-header-top{display:flex;align-items:center;gap:10px}
-#pixCloseBtn{margin-left:auto;background:rgba(255,255,255,.2);border:none;width:32px;height:32px;border-radius:50%;font-size:20px;line-height:1;cursor:pointer;color:#fff;transition:background .15s;flex:none;font-family:inherit}
-#pixCloseBtn:hover{background:rgba(255,255,255,.34)}
-.pix-header h2{color:#fff;font-size:19px;font-weight:700;display:flex;align-items:center;gap:8px}
-.pix-secure-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);color:#fff;font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px}
-.pix-secure-pill svg{width:12px;height:12px}
-.pix-header .pix-secure-pill{margin:10px 0 0}
-.pix-steps{display:flex;align-items:center;gap:8px;padding:12px 2px 14px}
-.pix-step{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.72);white-space:nowrap}
-.pix-step i{font-style:normal;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.22);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700}
-.pix-step.pix-step-on{color:#fff}
-.pix-step.pix-step-on i{background:#fff;color:#3483fa}
-.pix-steps .pix-step-line{flex:1;height:1px;background:rgba(255,255,255,.32);min-width:12px}
-#pixModal:has(#pixStepQr[style*="block"]) .pix-step-2{color:#fff}
-#pixModal:has(#pixStepQr[style*="block"]) .pix-step-2 i{background:#fff;color:#3483fa}
-#pixStepForm{flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#f5f5f5}
-.pix-summary{background:#fff;border-radius:8px;padding:14px 16px;margin:16px 16px 0;box-shadow:0 1px 2px rgba(0,0,0,.07)}
-.pix-summary-item{display:flex;gap:12px;align-items:flex-start}
-.pix-summary-item img{width:56px;height:56px;object-fit:cover;border-radius:8px;border:1px solid #eee;flex:none}
-.pix-summary-name{flex:1;min-width:0;font-size:13px;font-weight:600;color:rgba(0,0,0,.9);line-height:1.35}
-.pix-summary-price{font-size:15px;font-weight:700;color:rgba(0,0,0,.9);white-space:nowrap}
-.pix-summary-rows{margin-top:12px;border-top:1px solid #ededed;padding-top:8px}
-.pix-summary-rows>div{display:flex;justify-content:space-between;font-size:13px;color:rgba(0,0,0,.55);margin:5px 0}
-.pix-summary-rows .pix-free{color:#00a650;font-weight:600}
-.pix-summary-total{display:flex;justify-content:space-between;align-items:center;margin-top:8px;padding-top:10px;border-top:1px solid #ededed}
-.pix-summary-total span{font-size:14px;font-weight:600;color:rgba(0,0,0,.9)}
-.pix-summary-total b{font-size:19px;font-weight:700;color:rgba(0,0,0,.9)}
-#pixModal form{padding:2px 16px 0}
-.pix-form-section{font-size:11px;font-weight:700;color:rgba(0,0,0,.45);text-transform:uppercase;letter-spacing:.4px;margin:20px 0 0}
-#pixModal label{display:block;font-size:13px;font-weight:600;color:rgba(0,0,0,.9);margin:14px 0 6px}
-#pixModal input{width:100%;padding:0 14px;height:48px;border:1px solid rgba(0,0,0,.25);border-radius:6px;font-size:16px;background:#fff;transition:border-color .15s,box-shadow .15s;font-family:inherit;color:rgba(0,0,0,.9)}
-#pixModal input:focus{border-color:#3483fa;outline:none;box-shadow:0 0 0 2px rgba(52,131,250,.25);background:#fff}
-#pixModal input::placeholder{color:rgba(0,0,0,.35)}
+#pixModal.pix-page{border-radius:0;max-width:none;width:100%;height:100%;max-height:100%;top:0;left:0;transform:none;box-shadow:none}
+.pix-header{background:#02b3f2;color:#fff;padding:12px 20px;flex:none;display:flex;align-items:center;gap:10px}
+#pixModal.pix-page .pix-header{padding-top:calc(12px + env(safe-area-inset-top))}
+.pix-brand-img{height:36px;display:block}
+.pix-header-right{margin-left:auto;display:flex;align-items:center}
+.pix-secure-img{height:34px;display:block}
+#pixCloseBtn{margin-left:10px;background:rgba(255,255,255,.18);border:none;width:30px;height:30px;border-radius:50%;font-size:18px;line-height:1;cursor:pointer;color:#fff;flex:none;font-family:inherit}
+#pixCloseBtn:hover{background:rgba(255,255,255,.32)}
+#pixStepForm{flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.pix-co{width:100%;max-width:640px;margin:0 auto;padding:14px 14px 30px;display:flex;flex-direction:column;gap:14px}
+.pix-card{background:#fff;border-radius:14px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.pix-card-title{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;font-size:15px;font-weight:800;color:#333;cursor:pointer;padding:0;font-family:inherit;letter-spacing:.2px}
+.pix-card-title svg{width:18px;height:18px;color:#00b1ea;transition:transform .2s;flex:none}
+.pix-cart-closed .pix-cart-body{display:none}
+.pix-cart-closed .pix-card-title svg{transform:rotate(180deg)}
+.pix-cart-item{display:flex;gap:10px;margin-top:14px;position:relative;align-items:flex-start}
+.pix-cart-qty{position:absolute;top:-6px;left:-6px;width:20px;height:20px;border-radius:50%;background:#333;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;z-index:2}
+.pix-cart-item img{width:56px;height:56px;object-fit:cover;border-radius:10px;border:1px solid #eee;flex:none}
+.pix-cart-info{flex:1;min-width:0}
+.pix-cart-info b{font-size:13.5px;font-weight:600;color:#333;display:block;line-height:1.3}
+.pix-cart-remove{display:inline-block;margin-top:6px;font-size:11.5px;color:#00a650;text-decoration:underline;cursor:pointer;background:none;border:none;padding:0;font-family:inherit}
+.pix-cart-price{font-size:16px;font-weight:800;color:#333;white-space:nowrap;text-align:right}
+.pix-off-pill{display:block;margin-top:5px;font-style:normal;font-size:10px;font-weight:800;color:#fff;background:#00a650;border-radius:5px;padding:3px 6px;text-align:center}
+.pix-cart-row{display:flex;justify-content:space-between;margin-top:12px;font-size:13.5px;color:#555}
+.pix-cart-row b{color:#333;font-weight:600}
+.pix-cart-ship{color:#00a650!important;font-weight:700!important}
+.pix-cart-total{display:flex;justify-content:space-between;margin-top:12px;padding-top:12px;border-top:1px solid #eee;font-size:15px;font-weight:800;color:#00a650}
+
+.pix-payline{display:flex;align-items:center;gap:10px;margin-top:12px}
+.pix-radio{width:18px;height:18px;border-radius:50%;border:2px solid #333;position:relative;flex:none}
+.pix-radio::after{content:'';position:absolute;inset:3px;border-radius:50%;background:#333}
+.pix-payline b{font-size:15px;font-weight:800;color:#333}
+.pix-payline-ic{margin-left:auto;width:20px;height:20px}
+.pix-paybox{background:#eafaf1;border:1.5px solid #b9e9cf;border-radius:12px;padding:13px 14px;margin-top:12px}
+.pix-paybox-head{display:flex;align-items:center;gap:10px}
+.pix-paybox-head svg{width:24px;height:24px;flex:none}
+.pix-paybox-head b{font-size:14px;color:#333;display:block}
+.pix-paybox-head span{font-size:11.5px;color:#00a650;font-weight:700}
+.pix-paybox-valor{margin:10px 0 0;font-size:13px;color:#555}
+.pix-paybox-valor b{font-size:16px;color:#00a650;font-weight:800}
+.pix-howto-title{font-size:13px;font-weight:800;color:#333;margin:16px 0 8px}
+.pix-howto{margin:0;padding:0;list-style:none;counter-reset:h}
+.pix-howto li{counter-increment:h;position:relative;padding-left:30px;font-size:12.5px;color:#555;margin:7px 0;line-height:1.4}
+.pix-howto li::before{content:counter(h);position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:#00a650;color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.pix-howto b{color:#333}
+.pix-bump-card{background:#eefaf3;border:1.5px dashed #7fd6a4;border-radius:12px;padding:13px;margin-top:12px;transition:border-color .15s,background .15s}
+.pix-bump-card.pix-bump-on{border-style:solid;border-color:#00a650;background:#e2f6ea}
+.pix-bump-flag{display:block;font-size:11px;font-weight:800;color:#e67e22;margin-bottom:8px}
+.pix-bump-row{display:flex;gap:10px;align-items:center}
+.pix-bump-row img{width:48px;height:48px;object-fit:cover;border-radius:8px;border:1px solid #cdeeda;flex:none}
+.pix-bump-info2{flex:1;min-width:0}
+.pix-bump-info2 b{font-size:12.5px;color:#333;line-height:1.3;display:block}
+.pix-bump-prices{white-space:nowrap;text-align:right}
+.pix-bump-prices s{display:block;font-size:11px;color:#999}
+.pix-bump-prices b{font-size:14px;color:#00a650;font-weight:800}
+.pix-bump-btn{width:100%;margin-top:11px;background:#1a1a1a;color:#fff;border:none;border-radius:8px;height:44px;font-size:13px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;font-family:inherit;letter-spacing:.3px;transition:background .15s}
+.pix-bump-btn:hover{background:#000}
+.pix-bump-card.pix-bump-on .pix-bump-btn{background:#00a650}
+.pix-bump-cb{width:15px;height:15px;border:2px solid #fff;border-radius:3px;flex:none}
+.pix-bump-card.pix-bump-on .pix-bump-cb{background:#fff center/10px no-repeat url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300a650'><path d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/></svg>")}
+.pix-sec-title{display:flex;align-items:center;gap:10px;margin:0;font-size:16.5px;font-weight:800;color:#333}
+.pix-sec-title i{font-style:normal;width:26px;height:26px;border-radius:50%;background:#00b1ea;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13.5px;font-weight:800;flex:none}
+.pix-sec-note{font-size:12px;color:#777;margin:10px 0 0;line-height:1.5}
+.pix-sec-body{display:none;margin-top:4px}
+.pix-sec-open .pix-sec-body{display:block}
+.pix-co label:not(.pix-bump-item){display:block;font-size:13.5px;font-weight:600;color:#333;margin:15px 0 7px}
+.pix-co label em{color:#e74c3c;font-style:normal}
+.pix-co input{width:100%;padding:0 16px;height:52px;border:1.5px solid #ddd;border-radius:12px;font-size:16px;background:#fff;transition:border-color .15s,box-shadow .15s;font-family:inherit;color:#333}
+.pix-co input:focus{border-color:#00b1ea;outline:none;box-shadow:0 0 0 3px rgba(0,177,234,.15)}
+.pix-co input::placeholder{color:#999}
 .pix-addr-grid{display:flex;gap:10px}
 .pix-addr-grid>div{flex:1;min-width:0}
 .pix-addr-street{flex:3!important}
-#pixCepLoading{font-size:12px;color:#3483fa;display:none;margin:4px 0 0}
-.pix-bumps{margin:20px 0 0;background:#fff;border-radius:8px;padding:14px 14px 4px;box-shadow:0 1px 2px rgba(0,0,0,.07)}
-.pix-bumps-title{margin:0;font-size:14px;font-weight:700;color:rgba(0,0,0,.9)}
-.pix-bumps-sub{margin:2px 0 4px;font-size:12px;color:#00a650;font-weight:600}
-.pix-bump-item{display:flex;align-items:center;gap:10px;border-top:1px solid #f0f0f0;padding:12px 0;margin:0;cursor:pointer;position:relative}
-.pix-bump-item:first-of-type{border-top:none}
-.pix-bump-item::before{content:'';flex:none;width:20px;height:20px;border:2px solid rgba(0,0,0,.3);border-radius:4px;background:#fff center/13px no-repeat;transition:all .15s}
-.pix-bump-item:has(input:checked)::before{border-color:#3483fa;background-color:#3483fa;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><path d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/></svg>")}
-.pix-bump-check{position:absolute;opacity:0;pointer-events:none}
-.pix-bump-item img{width:48px;height:48px;object-fit:cover;border-radius:6px;border:1px solid #eee;flex:none}
-.pix-bump-info{flex:1;min-width:0}
-.pix-bump-info b{font-size:12.5px;color:rgba(0,0,0,.9);display:block;line-height:1.3}
-.pix-bump-info small{display:block;font-size:11px;color:rgba(0,0,0,.55);line-height:1.35;margin:3px 0 0}
-.pix-bump-info em{display:none}
-.pix-bump-price{font-size:13px;font-weight:700;color:rgba(0,0,0,.9);white-space:nowrap;padding-top:2px}
-.pix-trust{display:flex;gap:6px;margin:16px;background:#fff;border-radius:8px;padding:12px 8px;box-shadow:0 1px 2px rgba(0,0,0,.07)}
-.pix-trust-item{flex:1;text-align:center;padding:0 2px}
-.pix-trust-item svg{width:20px;height:20px;color:#3483fa}
-.pix-trust-item b{display:block;font-size:10.5px;color:rgba(0,0,0,.8);margin-top:4px;line-height:1.2}
-.pix-trust-item span{display:block;font-size:9.5px;color:rgba(0,0,0,.45);margin-top:2px;line-height:1.25}
-.pix-footer{display:flex;align-items:center;justify-content:center;gap:6px;font-size:11px;color:rgba(0,0,0,.45);margin:0 16px 18px;text-align:center}
-.pix-footer svg{width:12px;height:12px;color:#00a650;flex:none}
-#pixStepQr{display:none;flex:1 1 auto;min-height:0;overflow-y:auto;padding:22px 20px 24px;text-align:center;background:#f5f5f5}
+#pixCepLoading{font-size:12px;color:#00b1ea;display:none;margin:4px 0 0}
+.pix-next{width:100%;margin-top:18px;background:#3fc1f1;color:#fff;border:none;border-radius:999px;height:52px;font-size:15.5px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-family:inherit;letter-spacing:.2px;transition:background .15s}
+.pix-next:hover{background:#25b3e8}
+.pix-sec-error{display:none;color:#e74c3c;font-size:12.5px;margin:10px 0 0;text-align:center;font-weight:600}
+.pix-paybox{display:flex;align-items:center;gap:10px;background:#f0fafd;border:1.5px solid #bfeaf8;border-radius:12px;padding:13px 14px;margin-top:14px}
+.pix-paybox>svg{width:26px;height:26px;flex:none}
+.pix-paybox b{font-size:14px;color:#333;display:block}
+.pix-bump-check{position:absolute;opacity:0;pointer-events:none;width:1px!important;height:1px!important;padding:0!important;border:none!important}
+.pix-paybox span{font-size:11.5px;color:#777}
+.pix-total-row{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:#555;margin-top:16px}
+.pix-total-row b{font-size:17px;font-weight:800;color:#00a650}
+.pix-pay-bar{background:none;padding:0;border:none;box-shadow:none}
+.pix-pay-bar #pixPayBtn{margin-top:12px}
+#pixPayBtn{width:100%;background:#3fc1f1;color:#fff;border:none;border-radius:999px;height:52px;font-size:15.5px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-family:inherit;transition:background .15s}
+#pixPayBtn:hover{background:#25b3e8}
+#pixPayBtn:disabled{background:#a8dcf2;cursor:wait}
+#pixError{display:none;color:#e74c3c;font-size:12.5px;text-align:center;margin-top:8px;font-weight:600}
+.pix-promises{display:flex;flex-direction:column;gap:12px}
+.pix-promise{background:#fff;border-radius:14px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.08);display:flex;gap:12px;align-items:flex-start}
+.pix-promise-ic{width:38px;height:38px;border-radius:50%;background:#e6f7ee;color:#00a650;display:flex;align-items:center;justify-content:center;flex:none}
+.pix-promise-ic svg{width:20px;height:20px}
+.pix-promise>div{flex:1;min-width:0}
+.pix-stars{display:block;color:#ffc107;font-size:14px;letter-spacing:2px;line-height:1}
+.pix-promise b{display:block;font-size:13.5px;font-weight:800;color:#333;margin-top:4px}
+.pix-promise p{font-size:12px;color:#777;margin:4px 0 0;line-height:1.45}
+.pix-co-footer{text-align:center;font-size:12px;color:#888;margin-top:4px;line-height:1.7}
+.pix-co-footer b{color:#555}
+.pix-co-pay{display:flex;align-items:center;justify-content:center;gap:7px;margin-bottom:4px;font-weight:700;color:#555}
+.pix-co-pay svg{width:20px;height:20px}
+#pixStepQr{display:none;flex:1 1 auto;min-height:0;overflow-y:auto;padding:22px 16px 30px;text-align:center}
+.pix-qr-card{background:#fff;border-radius:14px;padding:22px 18px;box-shadow:0 1px 3px rgba(0,0,0,.08);max-width:420px;margin:0 auto}
 .pix-ok-circle{width:56px;height:56px;border-radius:50%;background:#e6f7ee;color:#00a650;display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
 .pix-ok-circle svg{width:30px;height:30px}
-#pixStepQr h2{font-size:20px}
-#pixStepQr .pix-sub{color:rgba(0,0,0,.55);font-size:13px;margin:6px 0 16px}
+#pixStepQr h2{font-size:20px;color:#333}
+#pixStepQr .pix-sub{color:#777;font-size:13px;margin:6px 0 16px}
 #pixQrImg{max-width:260px;width:100%;border:1px solid #eee;border-radius:8px}
 #pixQrBox{max-width:260px;margin:0 auto;padding:10px;background:#fff;border:1px solid #eee;border-radius:8px}
 #pixQrBox img,#pixQrBox canvas,#pixQrBox table{display:block;margin:0 auto}
-#pixCode{width:100%;margin-top:12px;padding:8px;font-size:11px;border:1px solid rgba(0,0,0,.2);border-radius:6px;resize:none;background:#fff}
-#pixCopyBtn{margin-top:8px;width:100%;background:#3483fa;color:#fff;border:none;border-radius:6px;padding:13px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
-#pixCopyBtn:hover{background:#2968c8}
-#pixStatusMsg{margin-top:12px;font-size:14px;font-weight:600}
+#pixCode{width:100%;margin-top:12px;padding:8px;font-size:11px;border:1px solid rgba(0,0,0,.2);border-radius:8px;resize:none;background:#fff;color:#333}
+#pixCopyBtn{margin-top:8px;width:100%;background:#00b1ea;color:#fff;border:none;border-radius:999px;padding:13px;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit}
+#pixCopyBtn:hover{background:#0090c0}
+#pixStatusMsg{margin-top:12px;font-size:14px;font-weight:700}
 .pix-spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:pixspin 1s linear infinite;vertical-align:-3px;margin-right:6px}
 .pix-qr-frame{background:#fff;border:2px solid #00a650;border-radius:14px;padding:12px;display:inline-block;box-shadow:0 4px 14px rgba(0,166,80,.15)}
 .pix-qr-frame img{display:block;border-radius:8px}
 .pix-qr-label{display:inline-flex;align-items:center;gap:5px;margin-top:8px;background:#e6f7ee;color:#00a650;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px}
-.pix-wait-spin{display:inline-block;width:13px;height:13px;border:2px solid rgba(30,98,208,.25);border-top-color:#1e62d0;border-radius:50%;animation:pixspin 1s linear infinite;vertical-align:-2px;margin-right:6px}
-#pixPaidBtn{margin-top:12px;width:100%;background:#fff;color:#3483fa;border:1.5px solid #3483fa;border-radius:6px;padding:12px;font-size:15px;font-weight:700;cursor:pointer;transition:background .15s;font-family:inherit}
-#pixPaidBtn:hover{background:#eef4ff}
-.pix-auto-note{font-size:11.5px;color:rgba(0,0,0,.5);margin:12px 0 0;line-height:1.45}
-.pix-after-paid{display:none;background:#e6f7ee;border:1.5px solid #9fdcbb;border-radius:10px;padding:14px;margin-top:14px;text-align:left}
+.pix-wait-spin{display:inline-block;width:13px;height:13px;border:2px solid rgba(0,177,234,.25);border-top-color:#00b1ea;border-radius:50%;animation:pixspin 1s linear infinite;vertical-align:-2px;margin-right:6px}
+#pixPaidBtn{margin-top:12px;width:100%;background:#fff;color:#00b1ea;border:1.5px solid #00b1ea;border-radius:999px;padding:12px;font-size:15px;font-weight:800;cursor:pointer;transition:background .15s;font-family:inherit}
+#pixPaidBtn:hover{background:#eefaff}
+.pix-auto-note{font-size:11.5px;color:#888;margin:12px 0 0;line-height:1.45}
+.pix-after-paid{display:none;background:#e6f7ee;border:1.5px solid #9fdcbb;border-radius:12px;padding:14px;margin-top:14px;text-align:left}
 .pix-after-paid>b{color:#00874a;font-size:14px;display:block;margin-bottom:6px}
 .pix-after-paid p{font-size:12.5px;color:rgba(0,0,0,.7);margin:0 0 8px;line-height:1.5}
 .pix-wa-mail{display:flex;gap:8px;margin-bottom:8px}
@@ -11447,185 +11472,230 @@
 .pix-wa-mail svg{width:15px;height:15px;flex:none}
 .pix-guarantee{display:flex;align-items:center;gap:6px;background:#fff;border:1px solid #cdeeda;border-radius:8px;padding:8px 10px;font-size:11.5px;font-weight:700;color:#00874a}
 .pix-guarantee svg{width:15px;height:15px;flex:none}
-.pix-total-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:rgba(0,0,0,.55)}
-.pix-total-row b{font-size:17px;font-weight:700;color:rgba(0,0,0,.9)}
-.pix-pay-bar{flex:none;z-index:6;background:#fff;padding:12px 16px calc(12px + env(safe-area-inset-bottom));border-top:1px solid #e6e6e6;box-shadow:0 -6px 16px rgba(0,0,0,.06)}
-.pix-pay-bar #pixPayBtn{margin-top:10px}
-.pix-pay-bar #pixError{margin-top:8px}
-#pixPayBtn{width:100%;background:#3483fa;color:#fff;border:none;border-radius:6px;height:48px;font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 12px rgba(52,131,250,.35);transition:background .15s;font-family:inherit}
-#pixPayBtn:hover{background:#2968c8}
-#pixPayBtn:disabled{background:#9fc3f7;cursor:wait;box-shadow:none}
-#pixError{display:none;color:#f04438;font-size:13px;text-align:center}
+.pix-trust{display:flex;gap:6px;margin-top:16px}
+.pix-trust-item{flex:1;text-align:center;padding:0 2px}
+.pix-trust-item svg{width:20px;height:20px;color:#00b1ea}
+.pix-trust-item b{display:block;font-size:10.5px;color:#333;margin-top:4px;line-height:1.2}
+.pix-trust-item span{display:block;font-size:9.5px;color:#999;margin-top:2px;line-height:1.25}
 @media (pointer:coarse){#pixCode{font-size:16px}}
 @keyframes pixspin{to{transform:rotate(1turn)}}
 @media (max-width:480px){
   #pixModal{width:100%;max-width:100%;height:100%;max-height:100%;border-radius:0;top:0;left:0;transform:none}
-  .pix-header{padding-top:calc(12px + env(safe-area-inset-top))}
+  .pix-co{padding:10px 10px 24px;gap:10px}
+  .pix-card{padding:15px;border-radius:12px}
+  .pix-co input{height:50px}
 }
 </style>
 <div id="pixOverlay"></div>
-<div id="pixOverlay"></div>
 <div id="pixModal">
   <div class="pix-header">
-    <div class="pix-header-top">
-      <h2><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18 8h-1V6a5 5 0 0 0-10 0v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zm-6 9a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2zm3.1-9H8.9V6a3.1 3.1 0 0 1 6.2 0v2z"/></svg>Finalizar compra</h2>
-      <button id="pixCloseBtn" type="button" aria-label="Fechar">&times;</button>
-    </div>
-    <span class="pix-secure-pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>Compra protegida · Conexão SSL</span>
-    <div class="pix-steps">
-      <span class="pix-step pix-step-1 pix-step-on"><i>1</i>Dados</span>
-      <span class="pix-step-line"></span>
-      <span class="pix-step pix-step-2"><i>2</i>Pagamento</span>
-    </div>
+    <img class="pix-brand-img" src="assets/checkout/mp-brand.png" alt="mercado pago">
+    <span class="pix-header-right"><img class="pix-secure-img" src="assets/checkout/mp-secure.png" alt="Pagamento 100% seguro"></span>
+    <button id="pixCloseBtn" type="button" aria-label="Fechar">&times;</button>
   </div>
   <div id="pixStepForm" class="pix-body">
-    <div class="pix-summary">
-      <div class="pix-summary-item">
-        <img src="screen_files/D_NQ_NP_672923-MLB87910987630_072025-O.webp" alt="Revólver Pressão M701 Co2 Preto Full Metal 4.5mm">
-        <span class="pix-summary-name">Revólver Pressão M701 Co2 Preto Full Metal 4.5mm Completo</span>
-        <span class="pix-summary-price">R$ 87,90</span>
-      </div>
-      <div class="pix-summary-rows">
-        <div><span>Produto</span><span>R$ 87,90</span></div>
-        <div><span>Frete</span><span class="pix-free">Grátis</span></div>
-      </div>
-      <div class="pix-summary-total"><span>Total</span><b>R$ 87,90</b></div>
-    </div>
     <form id="pixForm" novalidate>
-      <p class="pix-form-section">Seus dados</p>
-      <label for="pixName">Nome completo</label>
-      <input id="pixName" name="name" type="text" autocomplete="name" autocapitalize="words" spellcheck="false" enterkeyhint="next" maxlength="120" required>
-      <label for="pixEmail">E-mail</label>
-      <input id="pixEmail" name="email" type="email" autocomplete="email" autocapitalize="none" autocorrect="off" spellcheck="false" enterkeyhint="next" maxlength="120" required>
-      <label for="pixDoc">CPF ou CNPJ</label>
-      <input id="pixDoc" name="document" type="text" inputmode="numeric" autocomplete="off" autocapitalize="none" enterkeyhint="next" maxlength="18" required placeholder="000.000.000-00">
-      <label for="pixPhone">Telefone com DDD</label>
-      <input id="pixPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" autocapitalize="none" enterkeyhint="next" maxlength="15" required placeholder="(00) 00000-0000">
-      <p class="pix-form-section">Endereço de entrega</p>
-      <label for="pixCep">CEP</label>
-      <input id="pixCep" name="cep" type="text" inputmode="numeric" autocomplete="postal-code" autocapitalize="none" enterkeyhint="next" maxlength="9" required placeholder="00000-000">
-      <p id="pixCepLoading">Buscando endereço…</p>
-      <div class="pix-addr-grid">
-        <div class="pix-addr-street">
-          <label for="pixStreet">Endereço</label>
-          <input id="pixStreet" name="street" type="text" autocomplete="address-line1" autocapitalize="words" enterkeyhint="next" maxlength="160" required>
-        </div>
-        <div class="pix-addr-num">
-          <label for="pixNumber">Número</label>
-          <input id="pixNumber" name="number" type="text" inputmode="numeric" autocomplete="off" enterkeyhint="next" maxlength="20" required>
+    <div class="pix-co">
+      <div class="pix-card pix-cart" id="pixCart">
+        <button class="pix-card-title" id="pixCartToggle" type="button">SEU CARRINHO<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/></svg></button>
+        <div class="pix-cart-body">
+          <div class="pix-cart-item">
+            <span class="pix-cart-qty">1</span>
+            <img src="screen_files/D_NQ_NP_672923-MLB87910987630_072025-O.webp" alt="Revólver Pressão M701 Co2 Preto Full Metal 4.5mm">
+            <div class="pix-cart-info"><b>Revólver Pressão M701 Co2 Preto Full Metal 4.5mm Completo</b><button class="pix-cart-remove" id="pixRemoveLink" type="button">Remover produto</button></div>
+            <div class="pix-cart-price">R$ 87,90<em class="pix-off-pill">71% OFF NO PIX</em></div>
+          </div>
+          <div class="pix-cart-row"><span>Subtotal · 1 item</span><b>R$ 87,90</b></div>
+          <div class="pix-cart-row"><span>Frete</span><b class="pix-cart-ship">Grátis</b></div>
+          <div class="pix-cart-total"><span>Total</span><b id="pixCartTotal">R$ 87,90</b></div>
         </div>
       </div>
-      <label for="pixComplement">Complemento (opcional)</label>
-      <input id="pixComplement" name="complement" type="text" autocomplete="address-line2" autocapitalize="words" enterkeyhint="next" maxlength="60">
-      <label for="pixDistrict">Bairro</label>
-      <input id="pixDistrict" name="district" type="text" autocomplete="address-level3" autocapitalize="words" enterkeyhint="next" maxlength="80" required>
-      <div class="pix-addr-grid">
-        <div class="pix-addr-city">
-          <label for="pixCity">Cidade</label>
-          <input id="pixCity" name="city" type="text" autocomplete="address-level2" autocapitalize="words" enterkeyhint="next" maxlength="80" required>
+      <div class="pix-card pix-sec pix-sec-open" id="pixSec1">
+        <p class="pix-sec-title"><i>1</i> Identificação</p>
+        <div class="pix-sec-body">
+          <p class="pix-sec-note">Utilizaremos seu e-mail para: identificar seu perfil, histórico de compra, notificação de pedidos e carrinho de compras.</p>
+          <label for="pixEmail">E-mail <em>*</em></label>
+          <input id="pixEmail" name="email" type="email" autocomplete="email" autocapitalize="none" autocorrect="off" spellcheck="false" enterkeyhint="next" maxlength="120" required placeholder="ex: maria@gmail.com">
+          <label for="pixName">Nome completo <em>*</em></label>
+          <input id="pixName" name="name" type="text" autocomplete="name" autocapitalize="words" spellcheck="false" enterkeyhint="next" maxlength="120" required placeholder="Seu nome completo">
+          <label for="pixDoc">CPF <em>*</em></label>
+          <input id="pixDoc" name="document" type="text" inputmode="numeric" autocomplete="off" autocapitalize="none" enterkeyhint="next" maxlength="18" required placeholder="Digite seu CPF ou CNPJ">
+          <label for="pixPhone">Celular / WhatsApp <em>*</em></label>
+          <input id="pixPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" autocapitalize="none" enterkeyhint="next" maxlength="15" required placeholder="(00) 00000-0000">
+          <p class="pix-sec-error" id="pixStep1Err"></p>
+          <button class="pix-next" id="pixToStep2" type="button">Ir para a entrega <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/></svg></button>
         </div>
-        <div class="pix-addr-uf">
-          <label for="pixState">Estado</label>
-          <input id="pixState" name="state" type="text" autocomplete="address-level1" autocapitalize="characters" enterkeyhint="done" maxlength="2" required>
+      </div>
+      <div class="pix-card pix-sec" id="pixSec2">
+        <p class="pix-sec-title"><i>2</i> Entrega</p>
+        <div class="pix-sec-body">
+          <label for="pixCep">CEP <em>*</em></label>
+          <input id="pixCep" name="cep" type="text" inputmode="numeric" autocomplete="postal-code" autocapitalize="none" enterkeyhint="next" maxlength="9" required placeholder="00000-000">
+          <p id="pixCepLoading">Buscando endereço…</p>
+          <div class="pix-addr-grid">
+            <div class="pix-addr-street">
+              <label for="pixStreet">Endereço <em>*</em></label>
+              <input id="pixStreet" name="street" type="text" autocomplete="address-line1" autocapitalize="words" enterkeyhint="next" maxlength="160" required>
+            </div>
+            <div class="pix-addr-num">
+              <label for="pixNumber">Número <em>*</em></label>
+              <input id="pixNumber" name="number" type="text" inputmode="numeric" autocomplete="off" enterkeyhint="next" maxlength="20" required>
+            </div>
+          </div>
+          <label for="pixComplement">Complemento (opcional)</label>
+          <input id="pixComplement" name="complement" type="text" autocomplete="address-line2" autocapitalize="words" enterkeyhint="next" maxlength="60">
+          <label for="pixDistrict">Bairro <em>*</em></label>
+          <input id="pixDistrict" name="district" type="text" autocomplete="address-level3" autocapitalize="words" enterkeyhint="next" maxlength="80" required>
+          <div class="pix-addr-grid">
+            <div class="pix-addr-city">
+              <label for="pixCity">Cidade <em>*</em></label>
+              <input id="pixCity" name="city" type="text" autocomplete="address-level2" autocapitalize="words" enterkeyhint="next" maxlength="80" required>
+            </div>
+            <div class="pix-addr-uf">
+              <label for="pixState">Estado <em>*</em></label>
+              <input id="pixState" name="state" type="text" autocomplete="address-level1" autocapitalize="characters" enterkeyhint="done" maxlength="2" required>
+            </div>
+          </div>
+          <p class="pix-sec-error" id="pixStep2Err"></p>
+          <button class="pix-next" id="pixToStep3" type="button">Ir para o pagamento <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/></svg></button>
         </div>
       </div>
-      <div class="pix-bumps">
-        <p class="pix-bumps-title">Melhore sua compra</p>
-        <p class="pix-bumps-sub">Ofertas exclusivas desta compra</p>
-        <label class="pix-bump-item">
-          <input type="checkbox" class="pix-bump-check" data-id="chumbinhos-500" data-cents="2990">
-          <img src="assets/bumps/chumbinhos.jpg" alt="Kit 500 Chumbinhos 4.5mm Diabolo">
-          <span class="pix-bump-info"><b>Kit 500 Chumbinhos 4.5mm Diabolo</b><small>Munição extra para várias sessões de tiro. Compatível com seu revólver.</small><em>Adicionar ao pedido</em></span>
-          <span class="pix-bump-price">+ R$ 29,90</span>
-        </label>
-        <label class="pix-bump-item">
-          <input type="checkbox" class="pix-bump-check" data-id="co2-5caps" data-cents="3990">
-          <img src="assets/bumps/co2.jpg" alt="Kit 5 Cápsulas CO2 12g">
-          <span class="pix-bump-info"><b>Kit 5 Cápsulas CO2 12g</b><small>Não fique sem gás. Recarga garantida para muitas sessões.</small><em>Adicionar ao pedido</em></span>
-          <span class="pix-bump-price">+ R$ 39,90</span>
-        </label>
-        <label class="pix-bump-item">
-          <input type="checkbox" class="pix-bump-check" data-id="coldre" data-cents="3490">
-          <img src="assets/bumps/coldre.jpg" alt="Coldre Tático Universal">
-          <span class="pix-bump-info"><b>Coldre Tático Universal</b><small>Transporte com segurança e estilo. Ajuste rápido no cinto.</small><em>Adicionar ao pedido</em></span>
-          <span class="pix-bump-price">+ R$ 34,90</span>
-        </label>
-        <label class="pix-bump-item">
-          <input type="checkbox" class="pix-bump-check" data-id="oleo-silicone" data-cents="1990">
-          <img src="assets/bumps/oleo.jpg" alt="Óleo Lubrificante de Silicone para Airgun">
-          <span class="pix-bump-info"><b>Óleo Lubrificante de Silicone</b><small>Mantém o mecanismo suave e prolonga a vida útil da arma.</small><em>Adicionar ao pedido</em></span>
-          <span class="pix-bump-price">+ R$ 19,90</span>
-        </label>
-        <label class="pix-bump-item">
-          <input type="checkbox" class="pix-bump-check" data-id="alvos-50" data-cents="1490">
-          <img src="assets/bumps/alvos.jpg" alt="Kit 50 Alvos de Papel + Suporte">
-          <span class="pix-bump-info"><b>Kit 50 Alvos de Papel + Suporte</b><small>Pratique com precisão. Alvos numerados e prontos para usar.</small><em>Adicionar ao pedido</em></span>
-          <span class="pix-bump-price">+ R$ 14,90</span>
-        </label>
+      <div class="pix-card pix-sec" id="pixSec3">
+        <p class="pix-sec-title"><i>3</i> Pagamento</p>
+        <div class="pix-sec-body">
+          <div class="pix-payline"><span class="pix-radio"></span><b>PIX</b><svg class="pix-payline-ic" viewBox="0 0 24 24"><path fill="#00b1ea" d="M12 2 2 12l10 10L22 12 12 2zm0 2.83L19.17 12 12 19.17 4.83 12 12 4.83zM9.88 12l2.12-2.12L14.12 12 12 14.12 9.88 12z"/></svg></div>
+          <div class="pix-paybox">
+            <div class="pix-paybox-head"><svg viewBox="0 0 24 24" fill="#00a650"><path d="M12 2 2 12l10 10L22 12 12 2zm0 2.83L19.17 12 12 19.17 4.83 12 12 4.83zM9.88 12l2.12-2.12L14.12 12 12 14.12 9.88 12z"/></svg><div><b>Pagamento via PIX</b><span>Aprovação instantânea</span></div></div>
+            <p class="pix-paybox-valor">Valor no pix: <b id="pixPixValue">R$ 87,90</b></p>
+          </div>
+          <p class="pix-howto-title">Como pagar com PIX:</p>
+          <ol class="pix-howto">
+            <li>Clique no botão <b>Gerar código Pix</b> abaixo</li>
+            <li>Abra o app do seu banco e escolha a opção <b>Pagar com PIX</b></li>
+            <li>Escaneie o <b>QR Code</b> ou copie e cole o código PIX</li>
+            <li>Confirme o pagamento e <b>pronto!</b> Você receberá a confirmação em instantes</li>
+          </ol>
+          <p class="pix-bumps-title" style="margin-top:18px">🔥 Última chance! Ofertas exclusivas do PIX</p>
+          <p class="pix-bumps-sub">Adicione agora e pague tudo junto no mesmo código Pix</p>
+          <div class="pix-bump-card">
+            <span class="pix-bump-flag">🔥 Estoque limitado</span>
+            <input type="checkbox" class="pix-bump-check" data-id="chumbinhos-500" data-cents="2990">
+            <div class="pix-bump-row">
+              <img src="assets/bumps/chumbinhos.jpg" alt="Kit 500 Chumbinhos 4.5mm Diabolo">
+              <div class="pix-bump-info2"><b>Kit 500 Chumbinhos 4.5mm Diabolo</b></div>
+              <div class="pix-bump-prices"><s>R$ 49,90</s><b>+ R$ 29,90</b></div>
+            </div>
+            <button type="button" class="pix-bump-btn"><span class="pix-bump-cb"></span><span class="pix-bump-btn-txt">PEGAR OFERTA!</span></button>
+          </div>
+          <div class="pix-bump-card">
+            <span class="pix-bump-flag">🔥 Estoque limitado</span>
+            <input type="checkbox" class="pix-bump-check" data-id="co2-5caps" data-cents="3990">
+            <div class="pix-bump-row">
+              <img src="assets/bumps/co2.jpg" alt="Kit 5 Cápsulas CO2 12g">
+              <div class="pix-bump-info2"><b>Kit 5 Cápsulas CO2 12g</b></div>
+              <div class="pix-bump-prices"><s>R$ 59,90</s><b>+ R$ 39,90</b></div>
+            </div>
+            <button type="button" class="pix-bump-btn"><span class="pix-bump-cb"></span><span class="pix-bump-btn-txt">PEGAR OFERTA!</span></button>
+          </div>
+          <div class="pix-bump-card">
+            <span class="pix-bump-flag">🔥 Estoque limitado</span>
+            <input type="checkbox" class="pix-bump-check" data-id="coldre" data-cents="3490">
+            <div class="pix-bump-row">
+              <img src="assets/bumps/coldre.jpg" alt="Coldre Tático Universal">
+              <div class="pix-bump-info2"><b>Coldre Tático Universal</b></div>
+              <div class="pix-bump-prices"><s>R$ 54,90</s><b>+ R$ 34,90</b></div>
+            </div>
+            <button type="button" class="pix-bump-btn"><span class="pix-bump-cb"></span><span class="pix-bump-btn-txt">PEGAR OFERTA!</span></button>
+          </div>
+          <div class="pix-bump-card">
+            <span class="pix-bump-flag">🔥 Estoque limitado</span>
+            <input type="checkbox" class="pix-bump-check" data-id="oleo-silicone" data-cents="1990">
+            <div class="pix-bump-row">
+              <img src="assets/bumps/oleo.jpg" alt="Óleo Lubrificante de Silicone">
+              <div class="pix-bump-info2"><b>Óleo Lubrificante de Silicone p/ Airgun</b></div>
+              <div class="pix-bump-prices"><s>R$ 29,90</s><b>+ R$ 19,90</b></div>
+            </div>
+            <button type="button" class="pix-bump-btn"><span class="pix-bump-cb"></span><span class="pix-bump-btn-txt">PEGAR OFERTA!</span></button>
+          </div>
+          <div class="pix-bump-card">
+            <span class="pix-bump-flag">🔥 Estoque limitado</span>
+            <input type="checkbox" class="pix-bump-check" data-id="alvos-50" data-cents="1490">
+            <div class="pix-bump-row">
+              <img src="assets/bumps/alvos.jpg" alt="Kit 50 Alvos de Papel + Suporte">
+              <div class="pix-bump-info2"><b>Kit 50 Alvos de Papel + Suporte</b></div>
+              <div class="pix-bump-prices"><s>R$ 24,90</s><b>+ R$ 14,90</b></div>
+            </div>
+            <button type="button" class="pix-bump-btn"><span class="pix-bump-cb"></span><span class="pix-bump-btn-txt">PEGAR OFERTA!</span></button>
+          </div>
+
+          <div class="pix-pay-bar" id="pixPayBar">
+            <div class="pix-total-row"><span>Total do pedido</span><b id="pixTotalAmount">R$ 87,90</b></div>
+            <p id="pixError" role="alert"></p>
+            <button id="pixPayBtn" type="submit" form="pixForm"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 8h-1V6a5 5 0 0 0-10 0v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zm-6 9a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2zm3.1-9H8.9V6a3.1 3.1 0 0 1 6.2 0v2z"/></svg><span>Gerar código Pix</span></button>
+          </div>
+        </div>
       </div>
-    </form>
-    <div class="pix-trust">
-      <div class="pix-trust-item">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 15.6-4-4L7.4 11l1.6 1.6 4-4L14.4 10l-4.4 6.6z"/></svg>
-        <b>Compra Segura</b>
-        <span>Site blindado SSL</span>
+      <div class="pix-promises">
+        <div class="pix-promise">
+          <span class="pix-promise-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg></span>
+          <div><span class="pix-stars">★★★★★</span><b>Compra 100% segura</b><p>Seus dados são protegidos com criptografia de ponta a ponta. Nada é compartilhado.</p></div>
+        </div>
+        <div class="pix-promise">
+          <span class="pix-promise-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 5V1L7 6l5 5V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7z"/></svg></span>
+          <div><span class="pix-stars">★★★★★</span><b>Satisfação ou seu dinheiro de volta</b><p>Se o produto chegar com defeito ou não atender suas expectativas, devolvemos seu dinheiro sem burocracia.</p></div>
+        </div>
+        <div class="pix-promise">
+          <span class="pix-promise-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 8h-3V4H3a1 1 0 0 0-1 1v11h2a3 3 0 0 0 6 0h6a3 3 0 0 0 6 0h2v-5l-4-4zM6 18.5A1.5 1.5 0 1 1 7.5 17 1.5 1.5 0 0 1 6 18.5zm13.5-9 2.5 2.5V14h-5v-4.5h2.5zM18 18.5A1.5 1.5 0 1 1 19.5 17 1.5 1.5 0 0 1 18 18.5z"/></svg></span>
+          <div><span class="pix-stars">★★★★★</span><b>Entrega garantida com rastreio</b><p>Envio via Correios com seguro e código de rastreio para você acompanhar cada etapa do pedido.</p></div>
+        </div>
       </div>
-      <div class="pix-trust-item">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-        <b>Pagamento Protegido</b>
-        <span>Dados criptografados</span>
-      </div>
-      <div class="pix-trust-item">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 8h-3V4H3a1 1 0 0 0-1 1v11h2a3 3 0 0 0 6 0h6a3 3 0 0 0 6 0h2v-5l-4-4zM6 18.5A1.5 1.5 0 1 1 7.5 17 1.5 1.5 0 0 1 6 18.5zm13.5-9 2.5 2.5V14h-5v-4.5h2.5zM18 18.5A1.5 1.5 0 1 1 19.5 17 1.5 1.5 0 0 1 18 18.5z"/></svg>
-        <b>Entrega Garantida</b>
-        <span>Envio com rastreio</span>
+      <div class="pix-co-footer">
+        <div class="pix-co-pay"><svg viewBox="0 0 24 24" fill="#00b1ea"><path d="M12 2 2 12l10 10L22 12 12 2zm0 2.83L19.17 12 12 19.17 4.83 12 12 4.83zM9.88 12l2.12-2.12L14.12 12 12 14.12 9.88 12z"/></svg><span>Formas de pagamento: <b>Pix</b></span></div>
+        Compra processada em ambiente seguro<br><b>SEGURO CERTIFICADO SSL</b> · <b>PAGAMENTOS 100% SEGUROS</b>
       </div>
     </div>
-    <p class="pix-footer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6a5 5 0 0 0-10 0v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zm-6 9a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2z"/></svg>Ambiente criptografado · Seus dados estão protegidos</p>
-  </div>
-  <div class="pix-pay-bar" id="pixPayBar">
-    <div class="pix-total-row"><span>Total do pedido</span><b id="pixTotalAmount">R$ 87,90</b></div>
-    <p id="pixError" role="alert"></p>
-    <button id="pixPayBtn" type="submit" form="pixForm"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 8h-1V6a5 5 0 0 0-10 0v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zm-6 9a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2zm3.1-9H8.9V6a3.1 3.1 0 0 1 6.2 0v2z"/></svg><span>Gerar código Pix</span></button>
+    </form>
   </div>
   <div id="pixStepQr">
-    <div class="pix-ok-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg></div>
-    <h2>Pedido reservado!</h2>
-    <p class="pix-sub">Abra o app do seu banco, escaneie o QR Code ou copie o código abaixo.</p>
-    <div class="pix-qr-frame">
-      <img id="pixQrImg" alt="QR Code Pix">
-      <div id="pixQrBox" style="display:none"></div>
-      <span class="pix-qr-label"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg>Pix · Aprovação na hora</span>
-    </div>
-    <textarea id="pixCode" rows="3" readonly></textarea>
-    <br><button id="pixCopyBtn" type="button">Copiar código Pix</button>
-    <p id="pixStatusMsg"><span class="pix-wait-spin"></span>Aguardando pagamento…</p>
-    <button id="pixPaidBtn" type="button">Já paguei — confirmar agora</button>
-    <p class="pix-auto-note">Fique tranquilo: confirmamos seu pagamento <b>automaticamente</b> aqui mesmo, sem você precisar fazer nada após pagar.</p>
-    <div class="pix-after-paid" id="pixAfterPaid">
-      <b>Pagamento confirmado com sucesso!</b>
-      <div class="pix-wa-mail">
-        <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.2 1.2-1.8 1.3-.5.1-1.1.1-1.7-.1-3.1-1-5-4-5.2-4.2-.1-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.5-.4.8-.4h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 2 .1.2.1.3 0 .5l-.4.6c-.1.2-.2.3-.1.6.1.3.7 1.2 1.6 2 1.1 1 2 1.3 2.4 1.5.3.1.5.1.7-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.6.4.1.1.1.6-.1 1.2z"/></svg>WhatsApp</span>
-        <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>E-mail</span>
+    <div class="pix-qr-card">
+      <div class="pix-ok-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg></div>
+      <h2>Pedido reservado!</h2>
+      <p class="pix-sub">Abra o app do seu banco, escaneie o QR Code ou copie o código abaixo.</p>
+      <div class="pix-qr-frame">
+        <img id="pixQrImg" alt="QR Code Pix">
+        <div id="pixQrBox" style="display:none"></div>
+        <span class="pix-qr-label"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg>Pix · Aprovação na hora</span>
       </div>
-      <p>Acabamos de reservar seu pedido. Você receberá <b>agora uma mensagem no WhatsApp</b> e um <b>e-mail</b> com todos os dados da compra e o código de rastreio do envio.</p>
-      <span class="pix-guarantee"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>Entrega 100% garantida — compra protegida do início ao fim</span>
-    </div>
-    <div class="pix-trust" style="margin:16px 0 0">
-      <div class="pix-trust-item">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-        <b>Compra Segura</b>
-        <span>Site blindado SSL</span>
+      <textarea id="pixCode" rows="3" readonly></textarea>
+      <br><button id="pixCopyBtn" type="button">Copiar código Pix</button>
+      <p id="pixStatusMsg"><span class="pix-wait-spin"></span>Aguardando pagamento…</p>
+      <button id="pixPaidBtn" type="button">Já paguei — confirmar agora</button>
+      <p class="pix-auto-note">Fique tranquilo: confirmamos seu pagamento <b>automaticamente</b> aqui mesmo, sem você precisar fazer nada após pagar.</p>
+      <div class="pix-after-paid" id="pixAfterPaid">
+        <b>Pagamento confirmado com sucesso!</b>
+        <div class="pix-wa-mail">
+          <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.2 1.2-1.8 1.3-.5.1-1.1.1-1.7-.1-3.1-1-5-4-5.2-4.2-.1-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.5-.4.8-.4h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 2 .1.2.1.3 0 .5l-.4.6c-.1.2-.2.3-.1.6.1.3.7 1.2 1.6 2 1.1 1 2 1.3 2.4 1.5.3.1.5.1.7-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.6.4.1.1.1.6-.1 1.2z"/></svg>WhatsApp</span>
+          <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>E-mail</span>
+        </div>
+        <p>Acabamos de reservar seu pedido. Você receberá <b>agora uma mensagem no WhatsApp</b> e um <b>e-mail</b> com todos os dados da compra e o código de rastreio do envio.</p>
+        <span class="pix-guarantee"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>Entrega 100% garantida — compra protegida do início ao fim</span>
       </div>
-      <div class="pix-trust-item">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 8h-3V4H3a1 1 0 0 0-1 1v11h2a3 3 0 0 0 6 0h6a3 3 0 0 0 6 0h2v-5l-4-4zM6 18.5A1.5 1.5 0 1 1 7.5 17 1.5 1.5 0 0 1 6 18.5zm13.5-9 2.5 2.5V14h-5v-4.5h2.5zM18 18.5A1.5 1.5 0 1 1 19.5 17 1.5 1.5 0 0 1 18 18.5z"/></svg>
-        <b>Entrega Garantida</b>
-        <span>Envio com rastreio</span>
-      </div>
-      <div class="pix-trust-item">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6a5 5 0 0 0-10 0v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zm-6 9a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2z"/></svg>
-        <b>Pagamento Protegido</b>
-        <span>Dados criptografados</span>
+      <div class="pix-trust">
+        <div class="pix-trust-item">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+          <b>Compra Segura</b>
+          <span>Site blindado SSL</span>
+        </div>
+        <div class="pix-trust-item">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 8h-3V4H3a1 1 0 0 0-1 1v11h2a3 3 0 0 0 6 0h6a3 3 0 0 0 6 0h2v-5l-4-4zM6 18.5A1.5 1.5 0 1 1 7.5 17 1.5 1.5 0 0 1 6 18.5zm13.5-9 2.5 2.5V14h-5v-4.5h2.5zM18 18.5A1.5 1.5 0 1 1 19.5 17 1.5 1.5 0 0 1 18 18.5z"/></svg>
+          <b>Entrega Garantida</b>
+          <span>Envio com rastreio</span>
+        </div>
+        <div class="pix-trust-item">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6a5 5 0 0 0-10 0v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zm-6 9a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2zm3.1-9H8.9V6a3.1 3.1 0 0 1 6.2 0v2z"/></svg>
+          <b>Pagamento Protegido</b>
+          <span>Dados criptografados</span>
+        </div>
       </div>
     </div>
   </div>
@@ -11656,11 +11726,16 @@ try{var __vsLead=JSON.parse(localStorage.getItem('lead')||'null');if(__vsLead&&_
     }catch(e){}
   })();
   function fmtCents(c){return 'R$ '+(c/100).toFixed(2).replace('.',',');}
-  function updateTotal(){var t=BASE_CENTS;bumpChecks.forEach(function(c){if(c.checked){t+=parseInt(c.dataset.cents,10)||0;}});if(totalBox){totalBox.textContent=fmtCents(t);}return t;}
-  bumpChecks.forEach(function(c){c.addEventListener('change',updateTotal);});
-  var payBar=document.getElementById('pixPayBar');
-  function openModal(){if(window.fbq){fbq('track','InitiateCheckout');}modal.classList.add('pix-on');overlay.style.display='block';stepForm.scrollTop=0;payBar.style.display=stepQr.style.display==='block'?'none':'';}
-  function closeModal(){modal.classList.remove('pix-on');overlay.style.display='none';if(pollTimer){clearInterval(pollTimer);pollTimer=null;}}
+  function updateTotal(){var t=BASE_CENTS;bumpChecks.forEach(function(c){if(c.checked){t+=parseInt(c.dataset.cents,10)||0;}});if(totalBox){totalBox.textContent=fmtCents(t);}var ct=document.getElementById('pixCartTotal');if(ct){ct.textContent=fmtCents(t);}var pv=document.getElementById('pixPixValue');if(pv){pv.textContent=fmtCents(t);}return t;}
+  bumpChecks.forEach(function(c){c.addEventListener('change',function(){updateTotal();saveDraft();});});
+  var payBar=document.getElementById('pixPayBar'),DRAFT_KEY='vsCheckoutDraft',navPushed=false;
+  function saveDraft(){try{var d={};try{d=JSON.parse(localStorage.getItem(DRAFT_KEY)||'{}')||{};}catch(e){d={};}['pixName','pixEmail','pixDoc','pixPhone','pixCep','pixStreet','pixNumber','pixComplement','pixDistrict','pixCity','pixState'].forEach(function(id){var el=document.getElementById(id);if(!el){return;}var v=el.value;if(v&&v.trim()){d[id]=v;}});var bm=[];bumpChecks.forEach(function(c){if(c.checked){bm.push(c.dataset.id);}});d.__bumps=bm;localStorage.setItem(DRAFT_KEY,JSON.stringify(d));}catch(e){}}
+  function restoreDraft(onlyEmpty){try{var d=JSON.parse(localStorage.getItem(DRAFT_KEY)||'{}');Object.keys(d).forEach(function(id){if(id==='__bumps'){return;}var el=document.getElementById(id);if(el&&el.tagName==='INPUT'){if(onlyEmpty&&el.value&&el.value.trim()){return;}el.value=d[id]||'';}});if(!onlyEmpty&&d.__bumps){bumpChecks.forEach(function(c){c.checked=d.__bumps.indexOf(c.dataset.id)>-1;});}updateTotal();syncBumpCards();}catch(e){}}
+  function openModal(push){if(push!==false){try{navPushed=true;history.pushState({vsCheckout:1},'','/checkout'+location.search);}catch(e){}if(window.fbq){fbq('track','InitiateCheckout');}}modal.classList.add('pix-on');modal.classList.add('pix-page');document.body.style.overflow='hidden';overlay.style.display='none';restoreDraft();stepForm.scrollTop=0;payBar.style.display=stepQr.style.display==='block'?'none':'';}
+  function closeModal(){modal.classList.remove('pix-on');modal.classList.remove('pix-page');document.body.style.overflow='';if(pollTimer){clearInterval(pollTimer);pollTimer=null;}if(navPushed){navPushed=false;try{history.back();}catch(e){}}}
+  window.addEventListener('popstate',function(){if(/\/checkout\/?$/.test(location.pathname)){openModal(false);}else{modal.classList.remove('pix-on');modal.classList.remove('pix-page');document.body.style.overflow='';if(pollTimer){clearInterval(pollTimer);pollTimer=null;}}});
+  if(/\/checkout\/?$/.test(location.pathname)){try{history.replaceState({vsCheckout:1},'','/checkout'+location.search);}catch(e){}openModal(false);}
+  window.addEventListener('load',function(){setTimeout(function(){restoreDraft(true);},400);setTimeout(function(){restoreDraft(true);},1600);});
   function showError(msg){errBox.textContent=msg;errBox.style.display='block';}
   function scrollModalTo(el){
     setTimeout(function(){
@@ -11674,7 +11749,7 @@ try{var __vsLead=JSON.parse(localStorage.getItem('lead')||'null');if(__vsLead&&_
     if(window.innerWidth>480||!e.target||e.target.tagName!=='INPUT'){return;}
     scrollModalTo(e.target);
   });
-  form.addEventListener('input',function(){errBox.style.display='none';});
+  form.addEventListener('input',function(){errBox.style.display='none';saveDraft();});
   for(var bi=0;bi<buyBtns.length;bi++){buyBtns[bi].addEventListener('click',openModal);}
   document.getElementById('pixCloseBtn').addEventListener('click',closeModal);
   overlay.addEventListener('click',closeModal);
@@ -11771,6 +11846,7 @@ try{var __vsLead=JSON.parse(localStorage.getItem('lead')||'null');if(__vsLead&&_
         payBtn.disabled=false;payBtn.innerHTML=PAY_BTN_HTML;
         if(!res.body.ok){showError(res.body.message||'Erro ao gerar o PIX. Tente novamente.');return;}
         var tx=res.body;
+        try{localStorage.removeItem(DRAFT_KEY);}catch(e){}
         qrBox.innerHTML='';qrBox.style.display='none';qrImg.style.display='none';var qrOk=false;
         if(tx.qr_code&&window.QRCode){try{new QRCode(qrBox,{text:tx.qr_code,width:220,height:220,correctLevel:QRCode.CorrectLevel.M});qrBox.style.display='';qrOk=true;}catch(e){}}
         if(!qrOk&&tx.qr_code_base64){var b64=String(tx.qr_code_base64);if(b64.indexOf('data:image')!==0){b64='data:image/png;base64,'+b64.replace(/\s/g,'');}qrImg.onerror=function(){qrImg.style.display='none';};qrImg.src=b64;qrImg.style.display='';}
@@ -11814,6 +11890,37 @@ try{var __vsLead=JSON.parse(localStorage.getItem('lead')||'null');if(__vsLead&&_
     };
     pollTimer=setInterval(tick,5000);
   }
+  /* Navegação das seções 1-2-3 (clone visual) */
+  var sec2=document.getElementById('pixSec2'),sec3=document.getElementById('pixSec3'),
+      step1Err=document.getElementById('pixStep1Err'),step2Err=document.getElementById('pixStep2Err'),
+      toStep2=document.getElementById('pixToStep2'),toStep3=document.getElementById('pixToStep3');
+  function gotoSec(el){if(!el){return;}el.classList.add('pix-sec-open');setTimeout(function(){try{el.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){}},80);}
+  function secErr(box,msg){if(!box){return;}box.textContent=msg;box.style.display=msg?'block':'none';}
+  if(toStep2){toStep2.addEventListener('click',function(){
+    secErr(step1Err,'');
+    var nm=document.getElementById('pixName').value.trim(),em=document.getElementById('pixEmail').value.trim(),
+        docDigits=digitsOnly(docInput.value),phoneDigits=digitsOnly(phoneInput.value);
+    if(nm.length<3){secErr(step1Err,'Informe seu nome completo.');document.getElementById('pixName').focus();return;}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)){secErr(step1Err,'Informe um e-mail válido.');document.getElementById('pixEmail').focus();return;}
+    if(!validDoc(docDigits)){secErr(step1Err,'Informe um CPF ou CNPJ válido.');docInput.focus();return;}
+    if(phoneDigits.length<10||phoneDigits.length>11){secErr(step1Err,'Informe um telefone válido com DDD. Ex.: (11) 91234-5678');phoneInput.focus();return;}
+    gotoSec(sec2);
+  });}
+  if(toStep3){toStep3.addEventListener('click',function(){
+    secErr(step2Err,'');
+    var cepDigits=digitsOnly(cepInput.value);
+    if(cepDigits.length!==8){secErr(step2Err,'Informe um CEP válido com 8 dígitos.');cepInput.focus();return;}
+    var req=['pixStreet','pixNumber','pixDistrict','pixCity','pixState'],ok=true,ri,f;
+    for(ri=0;ri<req.length;ri++){f=document.getElementById(req[ri]);if(!f.value.trim()){secErr(step2Err,'Preencha todos os campos do endereço.');f.focus();ok=false;break;}}
+    if(ok){gotoSec(sec3);}
+  });}
+  var cartToggle=document.getElementById('pixCartToggle');
+  if(cartToggle){cartToggle.addEventListener('click',function(){var c=document.getElementById('pixCart');if(c){c.classList.toggle('pix-cart-closed');}});}
+  var removeLink=document.getElementById('pixRemoveLink');
+  if(removeLink){removeLink.addEventListener('click',function(ev){ev.preventDefault();closeModal();});}
+  function syncBumpCards(){var cards=document.querySelectorAll('.pix-bump-card');for(var ci=0;ci<cards.length;ci++){var card=cards[ci],inp=card.querySelector('.pix-bump-check');if(!inp){continue;}card.classList.toggle('pix-bump-on',inp.checked);var t=card.querySelector('.pix-bump-btn-txt');if(t){t.textContent=inp.checked?'\u2713 ADICIONADO':'PEGAR OFERTA!';}}}
+  var bumpBtns=document.querySelectorAll('.pix-bump-btn');
+  for(var bb=0;bb<bumpBtns.length;bb++){(function(btn){btn.addEventListener('click',function(){var card=btn.parentNode;if(!card){return;}var inp=card.querySelector('.pix-bump-check');if(!inp){return;}inp.checked=!inp.checked;inp.dispatchEvent(new Event('change',{bubbles:true}));syncBumpCards();});})(bumpBtns[bb]);}
 })();
 </script>
 </body></html>
