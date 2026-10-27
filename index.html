@@ -11725,8 +11725,10 @@ try{var __vsLead=JSON.parse(localStorage.getItem('lead')||'null');if(__vsLead&&_
     try{
       var params=new URLSearchParams(location.search),found={},stored={},k;
       utmKeys.forEach(function(key){var v=params.get(key);if(v){found[key]=v.slice(0,120);}});
-      if(Object.keys(found).length){tracking=found;sessionStorage.setItem('vs_utms',JSON.stringify(found));}
-      else{stored=JSON.parse(sessionStorage.getItem('vs_utms')||'{}');utmKeys.forEach(function(key){if(stored[key]){tracking[key]=stored[key];}});}
+      stored=JSON.parse(localStorage.getItem('vs_utms')||'{}');
+      var merged={};
+      utmKeys.forEach(function(key){if(stored[key]){merged[key]=stored[key];}if(found[key]){merged[key]=found[key];}});
+      if(Object.keys(merged).length){tracking=merged;localStorage.setItem('vs_utms',JSON.stringify(merged));}
     }catch(e){}
   })();
   function fmtCents(c){return 'R$ '+(c/100).toFixed(2).replace('.',',');}
