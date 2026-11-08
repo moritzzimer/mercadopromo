@@ -7,6 +7,9 @@ async function sendOrder(order) {
   const token = process.env.UTMIFY_API_TOKEN;
   if (!token) return { skipped: true };
 
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 8000);
+
   try {
     const resp = await fetch(ENDPOINT, {
       method: "POST",
@@ -15,12 +18,15 @@ async function sendOrder(order) {
         "x-api-token": token,
       },
       body: JSON.stringify(order),
+      signal: controller.signal,
     });
     let bodyText = null;
     try { bodyText = (await resp.text()).slice(0, 400); } catch { bodyText = null; }
     return { ok: resp.ok, status: resp.status, body: bodyText };
   } catch (err) {
     return { ok: false, error: String((err && err.message) || err) };
+  } finally {
+    clearTimeout(timeout);
   }
 }
 
