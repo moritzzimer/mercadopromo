@@ -91,7 +91,7 @@ module.exports = async (req, res) => {
     amount: totalAmount,
     description: fullDescription,
     reference,
-    source: "api_externa",
+    productHash: process.env.PARADISE_PRODUCT_HASH || "prod_5ca5f3e70c449af6",
     offer_link: process.env.SITE_URL || "https://localhost",
     customer: { name, email, phone, document },
   };
