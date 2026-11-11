@@ -23,36 +23,43 @@ module.exports = async (req, res) => {
   if (utmifyStatus) {
     const utmify = require("../../_lib/utmify");
     const catalog = require("../../_lib/catalog");
+    const release = require("../../_lib/release");
     const tracking = evt.tracking || {};
     const evtTime = String(evt.timestamp || "").replace("T", " ").slice(0, 19) || null;
     const amountCents = parseInt(evt.amount, 10);
-
-    // Reconstrói o pedido exatamente como no create.js.
-    // O postback da Paradise pode trazer customer_data (cópia do JSON de criação);
-    // a descrição gerada por catalog.buildDescription permite recuperar qty + bumps.
-    let quantity = 1;
-    let bumpIds = [];
+    const orderId = String(evt.external_id || evt.transaction_id || "");
     const cd = evt.customer_data;
     const desc = (cd && typeof cd === "object" && cd.description) ? String(cd.description) : "";
-    if (desc) {
-      const parsed = catalog.parseDescription(desc);
-      quantity = parsed.quantity;
-      bumpIds = parsed.bumpIds;
-    }
-    const products = catalog.buildProducts(quantity, bumpIds);
+    let products;
+    let fallbackTotal;
 
-    // Total: confia no amount do postback se válido; senão recalcula pelo catálogo.
-    // NUNCA envia null — a Utmify recusa pedido com priceInCents nulo.
-    const fallbackTotal = catalog.orderTotalCents(quantity, bumpIds);
+    if (/^TX-/.test(orderId)) {
+      const express = release.hasExpress(desc, amountCents);
+      products = release.buildProducts(express);
+      fallbackTotal = release.totalCents(express);
+    } else {
+      // O pedido inicial mantém quantidade e order bumps originais.
+      let quantity = 1;
+      let bumpIds = [];
+      if (desc) {
+        const parsed = catalog.parseDescription(desc);
+        quantity = parsed.quantity;
+        bumpIds = parsed.bumpIds;
+      }
+      products = catalog.buildProducts(quantity, bumpIds);
+      fallbackTotal = catalog.orderTotalCents(quantity, bumpIds);
+    }
+
+    // NUNCA envia total nulo — a Utmify recusa pedido com priceInCents nulo.
     const safeTotal = Number.isFinite(amountCents) && amountCents > 0 ? amountCents : fallbackTotal;
 
     try {
       utmifyResult = await utmify.sendOrder({
-      orderId: String(evt.external_id || evt.transaction_id || ""),
+      orderId,
       platform: "ParadisePags",
       paymentMethod: "pix",
       status: utmifyStatus,
-      createdAt: utmify.createdAtFromReference(evt.external_id) || evtTime,
+      createdAt: utmify.createdAtFromReference(orderId) || evtTime,
       approvedDate: evt.status === "approved" ? evtTime : null,
       refundedAt: evt.status === "refunded" ? evtTime : null,
       customer: {

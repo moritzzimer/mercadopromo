@@ -45,5 +45,6 @@ module.exports = async (req, res) => {
     transaction_id: tx.id || null,
     status: tx.status || "pending",
     amount: tx.amount || null,
+    paid_at: tx.paid_at || tx.approved_at || tx.updated_at || null,
   });
 };

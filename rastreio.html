@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#02b3f2">
+  <link rel="icon" type="image/png" href="assets/checkout/mp-brand.png">
+  <title>Acompanhe seu pedido | Mercado Pago</title>
+  <style>
+    @font-face{font-family:Proxima Nova;src:url('assets/mlstatic/ui/webfonts/v3.0.0/proxima-nova/proximanova-regular.woff2') format('woff2');font-weight:400;font-display:swap}
+    @font-face{font-family:Proxima Nova;src:url('assets/mlstatic/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2') format('woff2');font-weight:600 800;font-display:swap}
+    :root{--blue:#02b3f2;--blue-dark:#008dc4;--ink:#27313b;--muted:#65717d;--line:#dfe7ec;--surface:#fff;--soft:#f3f7fa;--green:#00874a;--green-soft:#e6f7ee}
+    *{box-sizing:border-box;margin:0;padding:0}
+    [hidden]{display:none!important}
+    body{min-height:100vh;background:var(--soft);color:var(--ink);font-family:Proxima Nova,Arial,sans-serif}
+    .topbar{background:var(--blue);color:#fff;box-shadow:0 1px 4px rgba(20,60,80,.12)}
+    .topbar-inner{width:min(calc(100% - 32px),760px);min-height:74px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{height:60px;width:auto;display:block}
+    .secure{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:.3px}
+    .secure svg{width:18px;height:18px}
+    main{width:min(calc(100% - 28px),720px);margin:24px auto 48px}
+    .update-banner{display:block;width:100%;height:auto;border-radius:12px;box-shadow:0 8px 24px rgba(26,58,76,.12);margin-bottom:24px}
+    .intro{margin-bottom:18px}
+    .eyebrow{color:var(--blue-dark);font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+    h1{margin-top:6px;font-size:28px;line-height:1.3;font-weight:600}
+    .intro p{margin-top:8px;color:var(--muted);font-size:14px;line-height:1.6}
+    .search-card,.summary,.timeline-card{border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:0 5px 18px rgba(25,55,70,.05)}
+    .search-card{padding:20px}
+    .search-card label{display:block;margin-bottom:8px;font-size:14px;font-weight:600}
+    .search-row{display:grid;grid-template-columns:1fr auto;gap:10px}
+    input{width:100%;min-height:48px;padding:12px 14px;border:1.5px solid #cdd9e0;border-radius:8px;outline:none;color:var(--ink);background:#fff;font:600 14px Proxima Nova,Arial,sans-serif;text-transform:uppercase}
+    input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(2,179,242,.15)}
+    .primary{min-height:48px;padding:0 22px;border:0;border-radius:999px;background:var(--blue);color:#fff;font:700 14px Proxima Nova,Arial,sans-serif;cursor:pointer;transition:background .18s}
+    .primary:hover{background:var(--blue-dark)}
+    .primary:focus-visible,.copy:focus-visible{outline:3px solid rgba(2,179,242,.3);outline-offset:3px}
+    .primary:disabled{opacity:.65;cursor:wait}
+    .error{margin-top:14px;padding:12px 14px;border:1px solid #f1c7c7;border-radius:8px;background:#fff3f3;color:#a32828;font-size:14px;line-height:1.5}
+    #resultado{margin-top:20px}
+    .summary{padding:22px}
+    .summary-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+    .label{color:var(--muted);font-size:12px;font-weight:600;text-transform:uppercase}
+    #statusAtual{margin-top:5px;font-size:22px;line-height:1.35;font-weight:600}
+    .carrier{flex:0 0 auto;padding:6px 11px;border-radius:999px;background:#e8f7fd;color:var(--blue-dark);font-size:12px;font-weight:700}
+    .details{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+    .detail-value{display:block;margin-top:5px;font-size:14px;line-height:1.5;font-weight:700;overflow-wrap:anywhere}
+    #codigoResultado{color:var(--blue-dark);letter-spacing:.4px}
+    .copy{min-height:32px;margin-top:5px;border:0;background:transparent;color:var(--muted);font:600 12px Proxima Nova,Arial,sans-serif;cursor:pointer;text-decoration:underline}
+    .timeline-card{margin-top:16px;padding:20px 22px}
+    .timeline-card h2{margin-bottom:16px;font-size:17px;font-weight:600}
+    .timeline{list-style:none}
+    .event{position:relative;display:grid;grid-template-columns:30px 1fr;gap:12px;padding-bottom:20px}
+    .event:last-child{padding-bottom:0}
+    .event:not(:last-child)::after{content:'';position:absolute;left:14px;top:30px;bottom:0;width:2px;background:var(--line)}
+    .event-icon{position:relative;z-index:1;width:30px;height:30px;display:grid;place-items:center;border:2px solid var(--line);border-radius:50%;background:#fff;color:var(--muted);font-size:12px;font-weight:700}
+    .event.done .event-icon{border-color:var(--green);background:var(--green);color:#fff}
+    .event.current .event-icon{border-color:var(--blue);color:var(--blue);box-shadow:0 0 0 4px #e0f5fd;animation:piscar-status 1.1s ease-in-out infinite}
+    @keyframes piscar-status{0%,100%{opacity:1}50%{opacity:.3}}
+    @media(prefers-reduced-motion:reduce){.event.current .event-icon{animation:none}}
+    .event h3{padding-top:3px;font-size:14px;line-height:1.4;font-weight:700}
+    .event p{margin-top:4px;color:var(--muted);font-size:13px;line-height:1.55}
+    .event.pending{opacity:.55}
+    .notice{margin-top:16px;color:var(--muted);font-size:12px;line-height:1.6;text-align:center}
+    @media(max-width:560px){
+      .topbar-inner{min-height:66px}.brand{height:50px}.secure{font-size:10px}
+      main{margin-top:16px}.update-banner{margin-bottom:20px;border-radius:9px}
+      h1{font-size:24px}.search-row{grid-template-columns:1fr}.primary{width:100%}
+      .summary,.timeline-card{padding:18px}.summary-top{flex-direction:column;gap:10px}
+      #statusAtual{font-size:20px}.details{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <img class="brand" src="assets/checkout/mp-brand.png" alt="Mercado Pago">
+      <span class="secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>COMPRA PROTEGIDA</span>
+    </div>
+  </header>
+  <main>
+    <img class="update-banner" src="assets/checkout/banner-atualizacao.png" alt="Atualização sobre a liberação do pedido">
+    <div class="intro">
+      <span class="eyebrow">Mercado Pago</span>
+      <h1>Acompanhe seu pedido</h1>
+      <p>Consulte o andamento da entrega com o código recebido após a confirmação do pagamento.</p>
+    </div>
+    <section class="search-card" aria-label="Consultar rastreio">
+      <form id="formRastreio">
+        <label for="codigo">Código de rastreio</label>
+        <div class="search-row">
+          <input id="codigo" name="codigo" autocomplete="off" placeholder="Digite seu código" maxlength="64" required>
+          <button class="primary" id="botaoConsultar" type="submit">Consultar</button>
+        </div>
+      </form>
+      <p class="error" id="erro" role="alert" hidden></p>
+    </section>
+    <section id="resultado" aria-live="polite" hidden>
+      <div class="summary">
+        <div class="summary-top">
+          <div><span class="label">Status atual</span><h2 id="statusAtual"></h2></div>
+          <span class="carrier">Pagamento aprovado</span>
+        </div>
+        <div class="details">
+          <div><span class="label">Código de rastreio</span><strong class="detail-value" id="codigoResultado"></strong><button class="copy" id="copiarCodigo" type="button">Copiar código</button></div>
+          <div><span class="label">Previsão estimada de entrega</span><strong class="detail-value">2 a 4 dias úteis</strong></div>
+        </div>
+      </div>
+      <div class="timeline-card">
+        <h2>Andamento do pedido</h2>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+      <p class="notice">O prazo de 2 a 4 dias úteis é uma estimativa. Esta página consulta o status novamente a cada minuto.</p>
+    </section>
+  </main>
+  <script>
+    const form = document.getElementById('formRastreio');
+    const campo = document.getElementById('codigo');
+    const botao = document.getElementById('botaoConsultar');
+    const erro = document.getElementById('erro');
+    const resultado = document.getElementById('resultado');
+    let codigoAtual = '';
+    let consultando = false;
+
+    function diasUteisDecorridos(inicio, fim) {
+      const cursor = new Date(inicio);
+      let dias = 0;
+      while (cursor < fim && dias < 4) {
+        cursor.setDate(cursor.getDate() + 1);
+        const dia = cursor.getDay();
+        if (dia !== 0 && dia !== 6 && cursor <= fim) dias += 1;
+      }
+      return dias;
+    }
+
+    function dataPagamento(codigo, valorApi) {
+      const daApi = new Date(valorApi || '');
+      if (!Number.isNaN(daApi.getTime())) return daApi;
+      try {
+        const salva = new Date(localStorage.getItem('mp_pago_' + codigo) || '');
+        if (!Number.isNaN(salva.getTime())) return salva;
+      } catch (_) {}
+      return new Date();
+    }
+
+    function renderizar(codigo, pagoEm) {
+      codigoAtual = codigo;
+      try { localStorage.setItem('mp_ultimo_pedido', codigo); } catch (_) {}
+      const dias = diasUteisDecorridos(pagoEm, new Date());
+      const indiceAtual = dias >= 2 ? 3 : dias >= 1 ? 2 : 1;
+      const etapas = [
+        { titulo: 'Pagamento confirmado', descricao: 'Recebemos a confirmação do seu pagamento e o pedido foi liberado para preparação.' },
+        { titulo: 'Pedido em preparação', descricao: 'O pedido está sendo preparado para ser encaminhado à transportadora.' },
+        { titulo: 'Enviado para transportadora', descricao: 'O pedido foi encaminhado para o fluxo de transporte.' },
+        { titulo: 'Em rota de entrega', descricao: 'O pedido está na etapa de transporte para o endereço do destinatário.' }
+      ];
+      document.getElementById('statusAtual').textContent = etapas[indiceAtual].titulo;
+      document.getElementById('codigoResultado').textContent = codigo;
+      const timeline = document.getElementById('timeline');
+      timeline.replaceChildren();
+      etapas.forEach((etapa, indice) => {
+        const concluida = indice < indiceAtual;
+        const atual = indice === indiceAtual;
+        const item = document.createElement('li');
+        item.className = `event ${concluida ? 'done' : atual ? 'current' : 'pending'}`;
+        const icon = document.createElement('span');
+        icon.className = 'event-icon';
+        icon.textContent = concluida ? '✓' : atual ? '●' : '○';
+        const content = document.createElement('div');
+        const title = document.createElement('h3');
+        title.textContent = etapa.titulo;
+        const description = document.createElement('p');
+        description.textContent = etapa.descricao;
+        content.append(title, description);
+        item.append(icon, content);
+        timeline.append(item);
+      });
+      resultado.hidden = false;
+    }
+
+    async function consultar(referencia) {
+      const codigo = String(referencia || '').trim().toUpperCase();
+      if (!codigo || consultando) return;
+      if (!/^[A-Z0-9_-]{3,64}$/.test(codigo)) {
+        resultado.hidden = true;
+        erro.textContent = 'Informe um código de rastreio válido.';
+        erro.hidden = false;
+        return;
+      }
+      if (!/^TX-/.test(codigo)) {
+        resultado.hidden = true;
+        erro.textContent = 'O rastreio será liberado após a confirmação do pagamento da taxa.';
+        erro.hidden = false;
+        return;
+      }
+      consultando = true;
+      botao.disabled = true;
+      botao.textContent = 'Consultando...';
+      erro.hidden = true;
+      try {
+        const response = await fetch('/api/public/pix/status?reference=' + encodeURIComponent(codigo), { cache: 'no-store' });
+        const j = await response.json();
+        if (!response.ok || !j.ok) throw new Error(j.message || 'Não foi possível consultar o pedido.');
+        if (j.status !== 'approved') throw new Error('O rastreio será liberado após a confirmação do pagamento da taxa.');
+        campo.value = codigo;
+        renderizar(codigo, dataPagamento(codigo, j.paid_at));
+        const url = new URL(window.location.href);
+        url.search = '';
+        url.searchParams.set('pedido', codigo);
+        window.history.replaceState({}, '', url);
+      } catch (error) {
+        resultado.hidden = true;
+        erro.textContent = error.message;
+        erro.hidden = false;
+      } finally {
+        consultando = false;
+        botao.disabled = false;
+        botao.textContent = 'Consultar';
+      }
+    }
+
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      consultar(campo.value);
+    });
+
+    document.getElementById('copiarCodigo').addEventListener('click', async event => {
+      const botaoCopiar = event.currentTarget;
+      try {
+        await navigator.clipboard.writeText(codigoAtual);
+        botaoCopiar.textContent = 'Código copiado!';
+        setTimeout(() => { botaoCopiar.textContent = 'Copiar código'; }, 2000);
+      } catch (_) {
+        campo.value = codigoAtual;
+        campo.select();
+        document.execCommand('copy');
+      }
+    });
+
+    const parametros = new URLSearchParams(window.location.search);
+    let codigoInicial = parametros.get('pedido') || '';
+    if (!codigoInicial) {
+      try { codigoInicial = localStorage.getItem('mp_ultimo_pedido') || ''; } catch (_) {}
+    }
+    if (codigoInicial) {
+      campo.value = codigoInicial.toUpperCase();
+      consultar(codigoInicial);
+    }
+    setInterval(() => { if (codigoAtual) consultar(codigoAtual); }, 60000);
+  </script>
+</body>
+</html>

@@ -36,7 +36,7 @@ function utcNow() {
 }
 
 function createdAtFromReference(reference) {
-  const m = /^VS-(\d{10,})-/.exec(String(reference || ""));
+  const m = /^(?:VS|TX)-(\d{10,})-/.exec(String(reference || ""));
   if (!m) return null;
   return new Date(parseInt(m[1], 10)).toISOString().slice(0, 19).replace("T", " ");
 }

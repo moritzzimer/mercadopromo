@@ -12,6 +12,14 @@
     {
       "source": "/checkout",
       "destination": "/"
+    },
+    {
+      "source": "/liberacao",
+      "destination": "/liberacao.html"
+    },
+    {
+      "source": "/rastreio",
+      "destination": "/rastreio.html"
     }
   ],
   "headers": [
