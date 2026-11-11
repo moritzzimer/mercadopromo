@@ -32,7 +32,7 @@ const server = http.createServer((req, res) => {
     res.writeHead(400).end("URL inválida");
     return;
   }
-  const routes = { "/": "index.html", "/checkout": "index.html", "/produto": "index.html", "/liberacao": "liberacao.html", "/rastreio": "rastreio.html" };
+  const routes = { "/": "index.html", "/checkout": "index.html", "/produto": "index.html", "/liberacao": "rastreio.html", "/rastreio": "rastreio.html" };
   const relative = routes[ pathname] || pathname.replace(/^\/+/, "");
   const file = path.resolve(root, relative);
   if (file !== root && !file.startsWith(root + path.sep)) {

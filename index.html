@@ -11869,12 +11869,11 @@ try{var __vsLead=JSON.parse(localStorage.getItem('lead')||'null');if(__vsLead&&_
   function showSuccess(j){
     if(pollTimer){clearInterval(pollTimer);pollTimer=null;}
     var paidAt=j&&j.paid_at?j.paid_at:new Date().toISOString();
-    var releaseCustomer={name:document.getElementById('pixName').value.trim(),email:document.getElementById('pixEmail').value.trim(),document:digitsOnly(docInput.value),phone:digitsOnly(phoneInput.value)};
-    try{sessionStorage.setItem('mp_release_customer',JSON.stringify(releaseCustomer));localStorage.setItem('mp_pago_inicial_'+currentRef,paidAt);}catch(e){}
-    statusMsg.textContent='Pagamento confirmado! Abrindo liberação do pedido…';
+    try{localStorage.setItem('mp_pago_'+currentRef,paidAt);localStorage.setItem('mp_ultimo_pedido',currentRef);}catch(e){}
+    statusMsg.textContent='Pagamento confirmado! Abrindo o rastreio do pedido…';
     statusMsg.style.color='#00a650';
     if(paidBtn){paidBtn.style.display='none';}
-    window.location.replace('/liberacao?pedido='+encodeURIComponent(currentRef));
+    window.location.replace('/rastreio?pedido='+encodeURIComponent(currentRef));
   }
   function checkStatus(){
     if(!currentRef){return;}

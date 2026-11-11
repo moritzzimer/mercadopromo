@@ -35,10 +35,13 @@ function validRequest(express) {
   };
 }
 
-test("Pix inicial aprovado abre a etapa de liberação", () => {
+test("Pix inicial aprovado abre diretamente o rastreio, sem segunda cobrança", () => {
   assert.match(index, /if\(j\.status==='approved'\)\{showSuccess\(j\);\}/);
-  assert.match(index, /window\.location\.replace\('\/liberacao\?pedido='\+encodeURIComponent\(currentRef\)\)/);
-  assert.match(index, /sessionStorage\.setItem\('mp_release_customer'/);
+  assert.match(index, /window\.location\.replace\('\/rastreio\?pedido='\+encodeURIComponent\(currentRef\)\)/);
+  assert.match(index, /localStorage\.setItem\('mp_pago_'\+currentRef,paidAt\)/);
+  assert.match(index, /localStorage\.setItem\('mp_ultimo_pedido',currentRef\)/);
+  assert.doesNotMatch(index, /window\.location\.replace\('\/liberacao/);
+  assert.doesNotMatch(index, /sessionStorage\.setItem\('mp_release_customer'/);
 });
 
 test("taxa tem valor obrigatório e frete expresso opcional", () => {
@@ -66,18 +69,19 @@ test("tela pós-pagamento usa o banner e o tema Mercado Pago", () => {
   assert.match(tracking, /prefers-reduced-motion:reduce/);
 });
 
-test("rastreio só aceita a referência da taxa aprovada", () => {
-  assert.match(tracking, /!\/\^TX-\/\.test\(codigo\)/);
+test("rastreio aceita o pedido original e exige pagamento aprovado", () => {
+  assert.match(tracking, /!\/\^\(VS\|TX\)-\/\.test\(codigo\)/);
   assert.match(tracking, /j\.status !== 'approved'/);
   assert.match(tracking, /\/api\/public\/pix\/status\?reference=/);
+  assert.doesNotMatch(tracking, /pagamento da taxa/);
   assert.match(status, /paid_at: tx\.paid_at/);
 });
 
-test("rotas de liberação e acompanhamento estão configuradas", () => {
+test("rota antiga da taxa e acompanhamento abrem o rastreio", () => {
   assert.match(routes, /"source": "\/liberacao"/);
-  assert.match(routes, /"destination": "\/liberacao\.html"/);
   assert.match(routes, /"source": "\/rastreio"/);
-  assert.match(routes, /"destination": "\/rastreio\.html"/);
+  assert.doesNotMatch(routes, /"destination": "\/liberacao\.html"/);
+  assert.equal((routes.match(/"destination": "\/rastreio\.html"/g) || []).length, 2);
   assert.ok(fs.statSync(path.join(root, "assets", "checkout", "banner-atualizacao.png")).size > 0);
 });
 

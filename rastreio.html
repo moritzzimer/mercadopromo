@@ -185,9 +185,9 @@
         erro.hidden = false;
         return;
       }
-      if (!/^TX-/.test(codigo)) {
+      if (!/^(VS|TX)-/.test(codigo)) {
         resultado.hidden = true;
-        erro.textContent = 'O rastreio será liberado após a confirmação do pagamento da taxa.';
+        erro.textContent = 'Informe o código recebido após a confirmação do pagamento.';
         erro.hidden = false;
         return;
       }
@@ -199,7 +199,7 @@
         const response = await fetch('/api/public/pix/status?reference=' + encodeURIComponent(codigo), { cache: 'no-store' });
         const j = await response.json();
         if (!response.ok || !j.ok) throw new Error(j.message || 'Não foi possível consultar o pedido.');
-        if (j.status !== 'approved') throw new Error('O rastreio será liberado após a confirmação do pagamento da taxa.');
+        if (j.status !== 'approved') throw new Error('O rastreio será liberado após a confirmação do pagamento.');
         campo.value = codigo;
         renderizar(codigo, dataPagamento(codigo, j.paid_at));
         const url = new URL(window.location.href);
