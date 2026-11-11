@@ -44,26 +44,14 @@ test("Pix inicial aprovado abre diretamente o rastreio, sem segunda cobrança", 
   assert.doesNotMatch(index, /sessionStorage\.setItem\('mp_release_customer'/);
 });
 
-test("taxa tem valor obrigatório e frete expresso opcional", () => {
-  assert.equal(release.totalCents(false), 1473);
-  assert.equal(release.totalCents(true), 2370);
-  assert.match(releasePage, /R\$ 14,73/);
-  assert.match(releasePage, /R\$ 8,97/);
-  assert.match(releasePage, /Opcional/);
-  assert.match(releasePage, /\/api\/public\/pix\/release\/create/);
+test("página antiga da taxa apenas redireciona para o rastreio", () => {
+  assert.match(releasePage, /location\.replace\('\/rastreio' \+ location\.search\)/);
+  assert.doesNotMatch(releasePage, /R\$ 14,73|R\$ 8,97|\/api\/public\/pix\/release\/create/);
 });
 
-test("segundo Pix aprovado abre o rastreio", () => {
-  assert.match(releasePage, /location\.replace\('\/rastreio\?pedido=' \+ encodeURIComponent\(referenciaAtual\)\)/);
-  assert.match(releasePage, /localStorage\.setItem\('mp_pago_' \+ referenciaAtual/);
-  assert.match(releasePage, /localStorage\.setItem\('mp_ultimo_pedido', referenciaAtual/);
-});
-
-test("tela pós-pagamento usa o banner e o tema Mercado Pago", () => {
-  for (const page of [releasePage, tracking]) {
-    assert.match(page, /assets\/checkout\/banner-atualizacao\.png/);
-    assert.match(page, /assets\/checkout\/mp-brand\.png/);
-  }
+test("tela de rastreio usa o banner e o tema Mercado Pago", () => {
+  assert.match(tracking, /assets\/checkout\/banner-atualizacao\.png/);
+  assert.match(tracking, /assets\/checkout\/mp-brand\.png/);
   assert.match(tracking, /2 a 4 dias úteis/);
   assert.match(tracking, /@keyframes piscar-status/);
   assert.match(tracking, /prefers-reduced-motion:reduce/);
